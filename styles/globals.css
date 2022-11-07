@@ -44,7 +44,6 @@ nav{
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
-  color: #fff;
 }
 .nav__menu-bar{
   display: flex;
@@ -86,23 +85,22 @@ nav{
   top:93.09px;
   width: 288px;
   row-gap: 24px;
-  left: -288px;
+  right: -288px;
   padding: 24px 16px;
   transition: all 0.2s;
   min-height: calc(100vh - 60px);
   background-color: #fff
 }
 .nav__menu-list.active{
-  left: 0;
+  right: 0;
 }
 .nav__link{
   position: relative;
   transition: all 0.2s;
-}
-.logo{
-  margin-right:59%;
+  color:black;
 }
 .nav__link:hover{
+ color:orange;
  font-weight: bold;
 }
 .overlay{
@@ -135,6 +133,7 @@ nav{
     align-items: center;
     background-color: transparent;
   }
+  .nav__link{color: #fff;}
   .nav__link::before{
     content: '';
     position: absolute;
@@ -147,7 +146,5 @@ nav{
     color: orange;    
     border-bottom: 3px solid orange;
    }
-  .logo{
-    margin-right:0%;
-  }
+
 }

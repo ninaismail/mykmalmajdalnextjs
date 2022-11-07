@@ -31,10 +31,10 @@ const Navbar = () => {
       <div></div>
       <div></div>
     </div>
-    <button className="block p-3 width-1/5 hover:text-orange-500
+    <button className="block p-3 hover:text-orange-500
     bg-gray-500 text-white placeholder-black border rounded-full border-black-300 
     focus:ring-black-500 focus:border-black-500 opacity-75">تسجيل الدخول للبيع بالجملة</button>
-    <div className={`${navActive ? "active" : ""} nav__menu-list `}>
+    <div className={` ${navActive ? "active" : ""} nav__menu-list `}>
       {MENU_LIST.map((menu, idx) => (
         <div 
           onClick={() => {
@@ -60,7 +60,7 @@ const Navbar = () => {
             required=""/>
         </div>
     </form>
-    <BiShoppingBag size="50px"color="orange" className="cursor-pointer	"/>
+    <BiShoppingBag size="50px"color="orange" className="cursor-pointer"/>
   </nav>
 </header>
   );

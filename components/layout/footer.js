@@ -4,7 +4,7 @@ function Footer() {
 <footer>
     <div className="flex flex-wrap md:flex-nowrap gap-8 py-8 px-6">
         <div className="md:w-1/3">
-            <h2 className="mb-6 text-orange-500 md:text-4xl text-2xl border-b-2 border-orange-500">
+            <h2 className="mb-6 text-orange-500 md:text-4xl text-2xl md:w-1/2 pb-4 border-b-2 border-orange-500">
             روابط سريعة
             </h2>
             <ul>
@@ -26,7 +26,7 @@ function Footer() {
             </ul>
         </div>
         <div className="md:w-1/3">
-            <h2 className="mb-6 text-orange-500 md:text-4xl text-2xl border-b-2 border-orange-500">
+            <h2 className="mb-6 text-orange-500 md:text-4xl text-2xl md:w-1/2 pb-4 border-b-2 border-orange-500">
             تواصل معنا
             </h2>
             <ul>
@@ -62,10 +62,11 @@ function Footer() {
             </ul>
         </div>   
         <div className="md:w-1/3">
-        <h2 className="mb-6 text-orange-500 md:text-4xl text-2xl border-b-2 border-orange-500">
+        <h2 className="mb-6 text-orange-500 md:text-4xl text-2xl md:w-1/2 pb-4 border-b-2 border-orange-500">
             موقعنا
             </h2>
-            <div className="mb-4  md:text-3xl text-2xl">map</div>
+            <div id="map" className="mb-4 md:text-3xl text-2xl">
+\           </div>
         </div>             
     </div>
     <div dir="ltr"className="text-right py-6 px-4 md:flex md:items-center md:justify-between">
@@ -77,6 +78,7 @@ function Footer() {
         </div>
     </div>
 </footer>
+
     );
   }
   
