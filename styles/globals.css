@@ -1,5 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 html,
 body {
+  direction: rtl;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -22,5 +26,128 @@ a {
   body {
     color: white;
     background: black;
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap');
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+header{
+  position: relative;
+  z-index: 30;
+}
+nav{
+  display: flex;
+  padding: 16px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  color: #fff;
+}
+.nav__menu-bar{
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+  cursor: pointer;
+}
+
+.nav__menu-bar div{
+  width: 40px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.x:nth-of-type(1) {
+  transition: all 100ms ease-in-out;
+  transform: rotate(45deg);
+  transform-origin: top left;
+  width: 28px;
+}
+
+.x:nth-of-type(2) {
+  transition: all 100ms ease-in-out;
+  transform-origin: center;
+  width: 0;
+}
+
+.x:nth-of-type(3) {
+  transition: all 100ms ease-in-out;
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+  width: 28px;
+}
+.nav__menu-list{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top:93.09px;
+  width: 288px;
+  row-gap: 24px;
+  left: -288px;
+  padding: 24px 16px;
+  transition: all 0.2s;
+  min-height: calc(100vh - 60px);
+  background-color: #fff
+}
+.nav__menu-list.active{
+  left: 0;
+}
+.nav__link{
+  position: relative;
+  transition: all 0.2s;
+}
+.logo{
+  margin-right:59%;
+}
+.nav__link:hover{
+ font-weight: bold;
+}
+.overlay{
+  display:hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999998;
+  background: rgba(0,0,0,.6);
+  cursor: pointer;
+}
+.center{
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .nav__menu-bar{
+    display: none;
+  }
+  .nav__menu-list{
+    position: unset;
+    flex-direction: row;
+    min-height: fit-content;
+    width: fit-content;
+    column-gap: 24px;
+    align-items: center;
+    background-color: transparent;
+  }
+  .nav__link::before{
+    content: '';
+    position: absolute;
+    bottom:0;
+    left: 0;
+    background-color: orange;
+    transition: all 0.2s;
+  }
+  .nav__link:hover{
+    color: orange;    
+    border-bottom: 3px solid orange;
+   }
+  .logo{
+    margin-right:0%;
   }
 }
