@@ -4,37 +4,37 @@ function Footer() {
 <footer>
     <div className="flex flex-wrap md:flex-nowrap gap-8 py-8 px-6">
         <div className="md:w-1/3">
-            <h2 className="font=RobotoSlab mb-6 text-orange-500 md:text-4xl text-2xl md:w-1/2 pb-4 border-b-2 border-orange-500">
+            <h2 className="font-RobotoSlab mb-6 text-orange-500 md:text-4xl text-2xl md:w-1/2 pb-4 border-b-2 border-orange-500">
             روابط سريعة
             </h2>
-            <ul className='font=Roboto'>
-                <li className="mb-4 md:text-2xl text-xl">
+            <ul className='font-Roboto'>
+                <li className="mb-4 md:text-xl text-l">
                     <a href="#" className="hover:underline">الصفحة الرئيسية</a>
                 </li>
-                <li className="mb-4 md:text-2xl text-xl">
+                <li className="mb-4 md:text-xl text-l">
                     <a href="#" className="hover:underline">من نحن</a>
                 </li>
-                <li className="mb-4 md:text-2xl text-xl">
+                <li className="mb-4 md:text-xl text-l">
                     <a href="#" className="hover:underline">الأصناف</a>
                 </li>
-                <li className="mb-4 md:text-2xl text-xl">
+                <li className="mb-4 md:text-xl text-l">
                     <a href="#" className="hover:underline">إبداعات منتجاتنا</a>
                 </li>
-                <li className="mb-4 md:text-2xl text-xl">
+                <li className="mb-4 md:text-xl text-l">
                     <a href="#" className="hover:underline">تواصل معنا</a>
                 </li>
             </ul>
         </div>
         <div className="md:w-1/3">
-            <h2 className="font=RobotoSlab mb-6 text-orange-500 md:text-4xl text-2xl md:w-1/2 pb-4 border-b-2 border-orange-500">
+            <h2 className="font-RobotoSlab mb-6 text-orange-500 md:text-4xl text-2xl md:w-1/2 pb-4 border-b-2 border-orange-500">
             تواصل معنا
             </h2>
-            <ul className='font=Roboto'>
-                <li className="mb-4 md:text-2xl text-xl">
+            <ul className='font-Roboto'>
+                <li className="mb-4 md:text-xl text-l">
                     <a href="#" className="hover:underline">يسعدنا تلقي استفساراتكم و اقتراحاتكم
                     على الرقم : 0593337383</a>
                 </li>
-                <li className="mb-4 md:text-2xl text-xl">
+                <li className="mb-4 md:text-xl text-l">
                     <a href="#" className="hover:underline">info@km-almajdal.com</a>
                 </li>
                 <li className="mb-4 flex">
@@ -62,7 +62,7 @@ function Footer() {
             </ul>
         </div>   
         <div className="md:w-1/3">
-        <h2 className="font=RobotoSlab mb-6 text-orange-500 md:text-4xl text-2xl md:w-1/2 pb-4 border-b-2 border-orange-500">
+        <h2 className="font-RobotoSlab mb-6 text-orange-500 md:text-4xl text-2xl md:w-1/2 pb-4 border-b-2 border-orange-500">
             موقعنا
             </h2>
             <div id="map" className="mb-4 md:text-3xl text-2xl">

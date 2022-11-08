@@ -3,7 +3,7 @@ const NavItem = ({ text, href, active }) => {
   return (
     <Link href={href}>
       <div 
-        className={`md:text-2xl text-xl nav__link ${
+        className={`md:text-xl text-l nav__link ${
           active ? "active" : ""
         }`}
       >
