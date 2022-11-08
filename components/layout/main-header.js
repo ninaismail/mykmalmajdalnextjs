@@ -25,8 +25,8 @@ const Navbar = () => {
       <Image src="/km-logo.png" width="121" height="61" alt="Food Options Logo" />
     </Link>
 
-    <button className="font=Roboto block p-3 hover:text-orange-500
-    bg-gray-500 text-white placeholder-black border rounded-full border-black-300 
+    <button className="font-Roboto block p-3 hover:text-orange-500
+    bg-gray-500 text-white border rounded-full border-black-500 
     focus:ring-black-500 focus:border-black-500 opacity-75">تسجيل الدخول للبيع بالجملة</button>
     <div className={`font=Roboto ${navActive ? "active" : ""} nav__menu-list `}>
       {MENU_LIST.map((menu, idx) => (
