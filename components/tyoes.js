@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import AllTypesofProducts from './alltypes'
+import TypesGrid from './typesgrid'
 
 function TypesofProducts() {
   return (
@@ -52,6 +53,7 @@ function TypesofProducts() {
   </div>  
 </div>
 <AllTypesofProducts/>
+<TypesGrid/>
     </div>
   );
 }

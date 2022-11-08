@@ -69,11 +69,12 @@ function Footer() {
 \           </div>
         </div>             
     </div>
-    <div dir="ltr"className="font=Roboto text-right py-6 px-4 md:flex md:items-center md:justify-between">
-        <div className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
+    <div dir="ltr"className="font-Roboto text-right py-6 px-4 md:flex md:items-center 
+    md:justify-around">
+        <div className="md:mx-10">
             © Copyrights 2022. <span className='font-bold'>Komet Al Majdal</span> All Rights Reserved. 
         </div>
-        <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0">
+        <div className="md:mx-10">
             Powered By<a href="https://flowbite.com/">DAS360</a>
         </div>
     </div>

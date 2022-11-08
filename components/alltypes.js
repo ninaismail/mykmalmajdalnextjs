@@ -4,11 +4,11 @@ function AllTypesofProducts() {
   return (
 <div dir="rtl"className="flex flex-wrap justify-center mt-6">
   <div className="lg:flex-1 w-full h-full lg:w-1/3 mx-6 my-4">
-   <Image src="/2-1.jpg" width="597" height="880" alt="جميع المنتجات" className="bg-gray-700 mx-auto mb-15"/>
+   <Image src="/2-1.jpg" width="597" height="880" alt="جميع المنتجات" className="bg-gray-700 mx-auto w-full"/>
   <div className='relative bottom-0 top-[-9.7em] right-0 left-0 mx-auto'>
-   <Image src="/sapore.png" width="154" height="120" alt="جميع المنتجات" className="mx-auto mb-15"/>  
-   <Image src="/5-kg.png" width="166" height="91" alt="جميع المنتجات" className="mx-auto mb-15"/>  
-   <h2 className="font-Roboto font-bold md:text-4xl text-2xl">
+   <Image src="/sapore.png" width="154" height="120" alt="جميع المنتجات" className="mx-auto"/>  
+   <Image src="/5-kg.png" width="166" height="91" alt="جميع المنتجات" className="mx-auto"/>  
+   <h2 className="font-Roboto font-bold md:text-4xl text-2xl mb-6">
    عبوة تدعم ابداعك
    </h2>
    <button className="font-Roboto block p-3 mx-auto w-full text-xl
@@ -17,11 +17,11 @@ function AllTypesofProducts() {
   </div>
 </div>
 <div className="lg:flex-1 w-full h-full lg:w-1/3 mx-6 my-4">
-   <Image src="/2-2.jpg" width="597" height="880" alt="جميع المنتجات" className="bg-gray-700 mx-auto mb-15"/>
+   <Image src="/2-2.jpg" width="597" height="880" alt="جميع المنتجات" className="bg-gray-700 mx-auto w-full"/>
   <div className='relative bottom-0 top-[-6.7em] right-0 left-0 mx-auto'>
-   <Image src="/km-logo.png" width="121" height="61" alt="Food Options Logo" className="mx-auto mb-15"/>
-   <Image src="/5-kg.png" width="166" height="91" alt="جميع المنتجات" className="mx-auto mb-15"/>  
-   <h2 className="font-Roboto font-bold md:text-4xl text-2xl">
+   <Image src="/km-logo.png" width="121" height="61" alt="Food Options Logo" className="mx-auto "/>
+   <Image src="/5-kg.png" width="166" height="91" alt="جميع المنتجات" className="mx-auto "/>  
+   <h2 className="font-Roboto font-bold md:text-4xl text-2xl mb-6">
    عبوة بحجم طموحاتك
    </h2>
    <button className="font-Roboto block p-3 mx-auto w-full text-xl
@@ -30,11 +30,11 @@ function AllTypesofProducts() {
   </div>
 </div>
 <div className="lg:flex-1 w-full h-full g:w-1/3 mx-6 my-4">
-   <Image src="/2-3.jpg" width="597" height="880" alt="جميع المنتجات" className="bg-gray-700 mx-auto mb-15"/>
+   <Image src="/2-3.jpg" width="597" height="880" alt="جميع المنتجات" className="bg-gray-700 mx-auto w-full"/>
 <div className='relative bottom-0 top-[-6.7em] right-0 left-0 mx-auto'>
-   <Image src="/km-logo.png" width="121" height="61" alt="Food Options Logo" className="mx-auto mb-15"/>
-   <Image src="/1-kg.png" width="166" height="91" alt="جميع المنتجات" className="mx-auto mb-15"/>  
-   <h2 className="font-Roboto font-bold md:text-4xl text-2xl">
+   <Image src="/km-logo.png" width="121" height="61" alt="Food Options Logo" className="mx-auto "/>
+   <Image src="/1-kg.png" width="166" height="91" alt="جميع المنتجات" className="mx-auto "/>  
+   <h2 className="font-Roboto font-bold md:text-4xl text-2xl mb-6">
    عبوة تحلي عائلتك
    </h2>
    <button className="font-Roboto block p-3 mx-auto w-full text-xl
