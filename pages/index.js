@@ -3,6 +3,7 @@ import Header from '../components/layout/main-header'
 import Footer from '../components/layout/footer'
 import HeroSection from '../components/hero-section'
 import TypesofProducts from '../components/tyoes'
+import Branches from '../components/branches'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <TypesofProducts/>
+      <Branches/>
       <Footer />
     </div>
   )
