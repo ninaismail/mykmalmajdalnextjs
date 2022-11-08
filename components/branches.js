@@ -11,13 +11,13 @@ function Branches() {
         <h1 className="font-RobotoSlab md:text-6xl text-4xl">
         فروعنا
         </h1>
-        <ul className="font-Roboto font-bold md:text-4xl text-2xl my-10">
+        <ul className="font-Roboto font-bold md:text-xl text-l my-10">
             <li>المنطقة الوسطى : الرياض (المركز الرئيسي)</li>
             <li>المنطقة الغربية : جدة</li>
             <li>المنطقة الجنوبية : خميس مشيط</li>
             <li>المنطقة الشرقية: الدمام-حفر الباطن </li>
         </ul>
-        <p className="font-Roboto font-bold md:text-4xl text-2xl text-gray-500">تمتد خدمات فرعنا ضمن المدينة و ما حولها</p>
+        <p className="font-Roboto font-bold md:text-xl text-l text-gray-500">تمتد خدمات فرعنا ضمن المدينة و ما حولها</p>
    </div>
 </div>
   );
