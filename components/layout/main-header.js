@@ -25,10 +25,10 @@ const Navbar = () => {
       <Image src="/km-logo.png" width="121" height="61" alt="Food Options Logo" />
     </Link>
 
-    <button className="block p-3 hover:text-orange-500
+    <button className="font=Roboto block p-3 hover:text-orange-500
     bg-gray-500 text-white placeholder-black border rounded-full border-black-300 
     focus:ring-black-500 focus:border-black-500 opacity-75">تسجيل الدخول للبيع بالجملة</button>
-    <div className={` ${navActive ? "active" : ""} nav__menu-list `}>
+    <div className={`font=Roboto ${navActive ? "active" : ""} nav__menu-list `}>
       {MENU_LIST.map((menu, idx) => (
         <div 
           onClick={() => {
@@ -45,7 +45,7 @@ const Navbar = () => {
         <label for="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
         <div className="relative">
             <div className="flex absolute inset-y-0 right-5 items-center pl-3 pointer-events-none">
-                <FaSearch/>
+                <FaSearch color="white"/>
             </div>
             <input type="search" id="default-search" className="block p-3 pr-10 w-full text-sm 
              bg-gray-500 text-black placeholder-black border rounded-full border-black-300 

@@ -5,7 +5,12 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],  theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Roboto: ["Roboto","sons-serif"],
+        RobotoSlab: ["Roboto Slab", "sons-serif"],
+      },
+    },
   },
   plugins: [],
 }
