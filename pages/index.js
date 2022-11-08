@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Header from '../components/layout/main-header'
 import Footer from '../components/layout/footer'
 import HeroSection from '../components/hero-section'
+import TypesofProducts from '../components/tyoes'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       </Head>
       <Header />
       <HeroSection />
+      <TypesofProducts/>
       <Footer />
     </div>
   )

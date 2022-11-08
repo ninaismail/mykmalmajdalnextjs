@@ -4,10 +4,10 @@ function Footer() {
 <footer>
     <div className="flex flex-wrap md:flex-nowrap gap-8 py-8 px-6">
         <div className="md:w-1/3">
-            <h2 className="mb-6 text-orange-500 md:text-4xl text-2xl md:w-1/2 pb-4 border-b-2 border-orange-500">
+            <h2 className="font=RobotoSlab mb-6 text-orange-500 md:text-4xl text-2xl md:w-1/2 pb-4 border-b-2 border-orange-500">
             روابط سريعة
             </h2>
-            <ul>
+            <ul className='font=Roboto'>
                 <li className="mb-4 md:text-2xl text-xl">
                     <a href="#" className="hover:underline">الصفحة الرئيسية</a>
                 </li>
@@ -26,10 +26,10 @@ function Footer() {
             </ul>
         </div>
         <div className="md:w-1/3">
-            <h2 className="mb-6 text-orange-500 md:text-4xl text-2xl md:w-1/2 pb-4 border-b-2 border-orange-500">
+            <h2 className="font=RobotoSlab mb-6 text-orange-500 md:text-4xl text-2xl md:w-1/2 pb-4 border-b-2 border-orange-500">
             تواصل معنا
             </h2>
-            <ul>
+            <ul className='font=Roboto'>
                 <li className="mb-4 md:text-2xl text-xl">
                     <a href="#" className="hover:underline">يسعدنا تلقي استفساراتكم و اقتراحاتكم
                     على الرقم : 0593337383</a>
@@ -62,14 +62,14 @@ function Footer() {
             </ul>
         </div>   
         <div className="md:w-1/3">
-        <h2 className="mb-6 text-orange-500 md:text-4xl text-2xl md:w-1/2 pb-4 border-b-2 border-orange-500">
+        <h2 className="font=RobotoSlab mb-6 text-orange-500 md:text-4xl text-2xl md:w-1/2 pb-4 border-b-2 border-orange-500">
             موقعنا
             </h2>
             <div id="map" className="mb-4 md:text-3xl text-2xl">
 \           </div>
         </div>             
     </div>
-    <div dir="ltr"className="text-right py-6 px-4 md:flex md:items-center md:justify-between">
+    <div dir="ltr"className="font=Roboto text-right py-6 px-4 md:flex md:items-center md:justify-between">
         <div className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
             © Copyrights 2022. <span className='font-bold'>Komet Al Majdal</span> All Rights Reserved. 
         </div>
