@@ -22,26 +22,6 @@ const Navbar = () => {
   const [lang1, setLang1] = useState("EN");
   return (
 <header>
-  <div class="fixed right-40 top-0"
-      onMouseLeave={e => {
-        setStyle({display: 'none'})
-    }}>
-    <button class="block bg-black text-white hover:bg-gray-700 font-bold py-2 px-4"
-    onMouseEnter={e => {
-        setStyle({display: 'block'})
-        setLang("EN");
-        setLang1("AR")
-    }}
-    onMouseLeave={e => {
-        setLang("AR");
-        setLang1("EN")
-    }}>
-      {lang}
-    </button>
-     <button style={style} class="block bg-black text-white hover:bg-gray-700 font-bold py-2 px-4">
-      {lang1}
-    </button>
-  </div>
   <nav>
     <Link href={"/"} className="logo">
       <Image src="/km-logo.png" width="121" height="61" alt="Food Options Logo" />
