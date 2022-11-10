@@ -1,8 +1,9 @@
 //import axios from '../../lib/axios';
+
 import Head from 'next/head'
 import Header from '../../components/layout/main-header'
 import Footer from '../../components/layout/footer'
-import HeroSection from '../../components/hero-section'
+import ProductsHeroSecion from '../../components/products/products-hero-section'
 import LangSwitch from '../../components/layout/langswitch'
 
 import ProductsList from '../../components/products/productslist';
@@ -75,7 +76,7 @@ export default function ProductsPage(props) {
       </Head>
       <LangSwitch />
       <Header />
-      <HeroSection />
+      <ProductsHeroSecion />
       <ProductsList products={products} />
       <Footer />
       </div>

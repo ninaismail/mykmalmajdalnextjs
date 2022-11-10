@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Header from '../components/layout/main-header'
 import Footer from '../components/layout/footer'
 import HeroSection from '../components/hero-section'
-import TypesofProducts from '../components/tyoes'
+import Categories from '../components/categories'
 import Branches from '../components/branches'
 import LangSwitch from '../components/layout/langswitch'
 
@@ -17,7 +17,7 @@ export default function Home() {
       <LangSwitch/>
       <Header />
       <HeroSection />
-      <TypesofProducts/>
+      <Categories/>
       <Branches/>
       <Footer />
     </div>

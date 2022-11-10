@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-function TypesGrid() {
+function CategoriesGallery() {
   return (
 <div dir="rtl"className="flex flex-wrap justify-center mt-6">
     <div className="lg:flex-1 w-full h-full md:w-1/2 lg:w-1/3 mx-6">
@@ -24,4 +24,4 @@ function TypesGrid() {
   );
 }
 
-export default TypesGrid;
+export default CategoriesGallery;

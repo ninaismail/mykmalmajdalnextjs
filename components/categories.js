@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import AllTypesofProducts from './alltypes'
-import TypesGrid from './typesgrid'
+import CategoriesGrid from './categories-gid'
+import CategoriesGallery from './categories-gallery'
 
-function TypesofProducts() {
+function Categories() {
   return (
     <div className="text-center mx-6 my-4" style={{"margin-top": "-140px"}}>
 <h1 className="font-RobotoSlab mb-6 md:text-6xl text-4xl">
@@ -52,10 +52,10 @@ function TypesofProducts() {
    </h2>
   </div>  
 </div>
-<AllTypesofProducts/>
-<TypesGrid/>
+<CategoriesGrid/>
+<CategoriesGallery/>
     </div>
   );
 }
 
-export default TypesofProducts;
+export default Categories;

@@ -133,7 +133,7 @@ nav{
     align-items: center;
     background-color: transparent;
   }
-  .nav__link{color: #fff;}
+  .nav__link{color: #fff;font-weight:bold;}
   .nav__link::before{
     content: '';
     position: absolute;

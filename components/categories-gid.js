@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-function AllTypesofProducts() {
+function CategoriesGrid() {
   return (
 <div dir="rtl"className="flex flex-wrap justify-center mt-6">
   <div className="lg:flex-1 w-full h-full lg:w-1/3 mx-6 my-4">
@@ -46,4 +46,4 @@ function AllTypesofProducts() {
   );
 }
 
-export default AllTypesofProducts;
+export default CategoriesGrid;
