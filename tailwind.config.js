@@ -10,6 +10,9 @@ module.exports = {
         Roboto: ["Roboto","sons-serif"],
         RobotoSlab: ["Roboto Slab", "sons-serif"],
       },
+      variants: {
+        fill: ['hover', 'focus'], // this line does the trick
+      },
     },
   },
   plugins: [],

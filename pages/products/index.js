@@ -4,9 +4,11 @@ import Head from 'next/head'
 import Header from '../../components/layout/main-header'
 import Footer from '../../components/layout/footer'
 import ProductsHeroSecion from '../../components/products/products-hero-section'
+//import ProductsCategoriesNav from '../../components/products/products-categories-nav';
 import LangSwitch from '../../components/layout/langswitch'
 
 import ProductsList from '../../components/products/productslist';
+import ProductsFilters from '../../components/products/products-filters'
 const products = [
   {
     id: 1,
@@ -77,6 +79,7 @@ export default function ProductsPage(props) {
       <LangSwitch />
       <Header />
       <ProductsHeroSecion />
+      <ProductsFilters/>
       <ProductsList products={products} />
       <Footer />
       </div>
