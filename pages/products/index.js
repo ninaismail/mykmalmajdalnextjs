@@ -79,10 +79,11 @@ export default function ProductsPage(props) {
       <LangSwitch />
       <Header />
       <ProductsHeroSecion />
+      <div className='mx-6'>
       <ProductsFilters/>
       <ProductsList products={products} />
       <Footer />
-      </div>
+      </div></div>
     )
   }
   // export async function getStaticProps() {
