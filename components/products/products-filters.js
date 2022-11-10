@@ -11,7 +11,7 @@ rounded-lg block w-full px-6 py-3">
   <option className="bg-white text-black"value="pricehtol">السعر من الأعلى للأدنى</option>
   <option className="bg-white text-black"value="priceltoh">السعر من الأدنى للأعلى</option>
 </select>
-<BiChevronDown color="white" size="30px" className='absolute left-2 top-10 z-10'/>
+<BiChevronDown color="white" size="30px" className='absolute left-2 top-2 z-100'/>
 </div>
   );
 }

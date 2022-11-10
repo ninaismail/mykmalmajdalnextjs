@@ -4,7 +4,7 @@ export default function ProductsList(props) {
     const { products } = props;
 
   return (
-    <div className="mt-10 mb-4 bg-white border border-black shadow-xl px-6 py-4 relative z-1 w-3/4 h-auto mx-auto rounded-lg">
+    <div className="my-10 bg-white border border-black shadow-xl px-6 py-4 relative z-1 w-3/4 h-auto mx-auto rounded-lg">
       <div className="mx-auto mb-4 flex flex-wrap justify-between items-center">
         <a href="#"className="text-center hover:text-orange-500">جميع المنتجات</a>
         <a href="#"className="text-center hover:text-orange-500">1 كغ</a>
