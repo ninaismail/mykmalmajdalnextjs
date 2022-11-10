@@ -22,7 +22,10 @@ const Navbar = () => {
   const [lang1, setLang1] = useState("EN");
   return (
 <header>
-  <div class="fixed right-40 top-0">
+  <div class="fixed right-40 top-0"
+      onMouseLeave={e => {
+        setStyle({display: 'none'})
+    }}>
     <button class="block bg-black text-white hover:bg-gray-700 font-bold py-2 px-4"
     onMouseEnter={e => {
         setStyle({display: 'block'})
@@ -30,7 +33,6 @@ const Navbar = () => {
         setLang1("AR")
     }}
     onMouseLeave={e => {
-        setStyle({display: 'none'})
         setLang("AR");
         setLang1("EN")
     }}>
