@@ -9,6 +9,7 @@ import LangSwitch from '../../components/layout/langswitch'
 
 import ProductsList from '../../components/products/productslist';
 import ProductsFilters from '../../components/products/products-filters'
+import Branches from '../../components/branches'
 const products = [
   {
     id: 1,
@@ -82,8 +83,10 @@ export default function ProductsPage(props) {
       <div className='mx-6'>
       <ProductsFilters/>
       <ProductsList products={products} />
+      </div>      
+      <Branches/>
       <Footer />
-      </div></div>
+      </div>
     )
   }
   // export async function getStaticProps() {
