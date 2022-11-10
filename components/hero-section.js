@@ -10,7 +10,7 @@ function HeroSection() {
   }, []);
   return (
 <div>
-<div className="relative bottom-40 right-0 flex items-center justify-start w-full">
+<div className="relative bottom-[11em] right-0 flex items-center justify-start w-full">
   <video className='object-cover'
     ref={videoRef}
     width="1920"

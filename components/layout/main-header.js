@@ -17,19 +17,38 @@ const MENU_LIST = [
 const Navbar = () => {
   const [navActive, setNavActive] = useState(null);
   const [activeIdx, setActiveIdx] = useState(-1);
-
+  const [style, setStyle] = useState({display: 'none'});
+  const [lang, setLang] = useState("AR");
+  const [lang1, setLang1] = useState("EN");
   return (
 <header>
+  <div class="fixed right-40 top-0">
+    <button class="block bg-black text-white hover:bg-gray-700 font-bold py-2 px-4"
+    onMouseEnter={e => {
+        setStyle({display: 'block'})
+        setLang("EN");
+        setLang1("AR")
+    }}
+    onMouseLeave={e => {
+        setStyle({display: 'none'})
+        setLang("AR");
+        setLang1("EN")
+    }}>
+      {lang}
+    </button>
+     <button style={style} class="block bg-black text-white hover:bg-gray-700 font-bold py-2 px-4">
+      {lang1}
+    </button>
+  </div>
   <nav>
     <Link href={"/"} className="logo">
       <Image src="/km-logo.png" width="121" height="61" alt="Food Options Logo" />
     </Link>
-
-    <button className="font-Roboto block p-3 hover:text-orange-500
+   <div className={`font-Roboto ${navActive ? "active" : ""} nav__menu-list `}>
+   <button className="font-Roboto block p-3 hover:text-orange-500
     bg-gray-500 text-white border rounded-full border-black-500 
     focus:ring-black-500 focus:border-black-500 opacity-75">تسجيل الدخول للبيع بالجملة</button>
-    <div className={`font=Roboto ${navActive ? "active" : ""} nav__menu-list `}>
-      {MENU_LIST.map((menu, idx) => (
+        {MENU_LIST.map((menu, idx) => (
         <div 
           onClick={() => {
             setActiveIdx(idx);
@@ -41,7 +60,7 @@ const Navbar = () => {
         </div>
       ))}
     </div>
-    <form>   
+    <form>
         <label for="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
         <div className="relative">
             <div className="flex absolute inset-y-0 right-5 items-center pl-3 pointer-events-none">
