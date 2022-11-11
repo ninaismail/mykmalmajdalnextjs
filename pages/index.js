@@ -7,6 +7,50 @@ import Branches from '../components/branches'
 import LangSwitch from '../components/layout/langswitch'
 
 export default function Home() {
+  const categories = [
+    {
+      id: 1,
+      name: 'جميع المنتجات',
+      href: 'allcategories',
+      image: '/categories/allcategories.jpg',
+    },
+    {
+      id: 2,
+      name: 'المكسرات',
+      href: 'category-nuts',
+      image: '/categories/nuts.jpg',
+    },
+    {
+      id: 3,
+      name: 'قهوة',
+      href: 'category-coffee',
+      image: '/categories/coffee.jpg',
+    },
+    {
+      id: 4,
+      name: 'البسكويت',
+      href: 'category-cookies',
+      image: '/categories/cookies.jpg',
+    },
+    {
+      id: 5,
+      name: 'جندويات',
+      href: 'category-jandawiyat',
+      image: '/categories/coconut.jpg',
+    },
+    {
+      id: 6,
+      name: 'فواكه',
+      href: 'category-fruits',
+      image: '/categories/fruits.jpg',
+    },
+    {
+      id: 7,
+      name: 'شوكولاته',
+      href: 'category-chocolate',
+      image: '/categories/chocolate.jpg',
+    },  
+  ]  
   return (
     <div>
       <Head>
@@ -17,7 +61,7 @@ export default function Home() {
       <LangSwitch/>
       <Header />
       <HeroSection />
-      <CategoriesSection/>
+      <CategoriesSection categories={categories}/>
       <Branches/>
       <Footer />
     </div>

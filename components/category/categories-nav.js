@@ -1,6 +1,6 @@
 import Category from "./category"
 
-function CategoriesNav() {
+function CategoriesNav(props) {
   const { categories } = props;
 
   return (

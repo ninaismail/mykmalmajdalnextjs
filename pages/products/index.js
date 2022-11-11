@@ -76,7 +76,9 @@ const products = [
   },  
   // More products...
 ]
+
 export default function ProductsPage(props) {
+
     return (
       <div>
       <Head>
