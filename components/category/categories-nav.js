@@ -10,6 +10,7 @@ function CategoriesNav(props) {
  key={category.id}
  id={category.id}
  name={category.name}
+ href={category.href}
  image={category.image}
  />
 ))} 

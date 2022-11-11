@@ -52,7 +52,7 @@ return (
       layout="responsive"objectFit="cover"alt="Km Almajdal" className='lg:h-screen' />
       <h1 className="font-RobotoSlab absolute md:text-8xl text-4xl text-white font-bold z-100">الأصناف</h1>
   </div>
-  <ProductsCategoriesNav categories={categories}/>
+  <ProductsCategoriesNav productscategory={categories}/>
 </div>
   );
 } 
