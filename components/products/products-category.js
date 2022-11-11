@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from "next/link"
 
-export function ProductsCategory(props) {
+export default function ProductsCategory(props) {
     const { id, name, image, href } = props;
     const exploreLink = `/${href}`;  
   return (
