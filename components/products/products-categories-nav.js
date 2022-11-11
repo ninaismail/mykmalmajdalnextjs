@@ -4,7 +4,7 @@ function ProductsCategoriesNav(props) {
   const { productscategories } = props;
   
   return (
-<div dir="rtl"className="relative right-0 bottom-[5em] flex flex-wrap justify-center">
+<div dir="rtl"className="relative right-0 bottom-[18em] flex flex-wrap justify-center">
 {Array.isArray(productscategories)&&productscategories.map((productscategory) => (
  <ProductsCategory 
  key={productscategory.id}
