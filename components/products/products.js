@@ -4,6 +4,7 @@ import ProductsList from '../products/products-list';
 
 function Products(props) {
   const { categoryId } = props;
+
   const [products, setProducts] = useState([]);
 
   useEffect(() => {

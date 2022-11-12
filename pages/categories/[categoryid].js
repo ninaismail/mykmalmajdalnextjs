@@ -1,4 +1,5 @@
 import axios from '../../lib/axios';
+import { useRouter } from 'next/router';
 
 import Head from 'next/head'
 import Header from '../../components/layout/main-header'
@@ -12,9 +13,8 @@ import Branches from '../../components/branches'
 import ProductsCategoriesNav from '../../components/products/products-categories-nav'
 
 export default function ProductsPage(props) {
-  const category = props.selectedCategory;
+  const category = props.selectedCategory; 
   const categories = props.allcategories;
-
     return (
       <div>
       <Head>
@@ -39,11 +39,11 @@ export default function ProductsPage(props) {
     const categories = await axios.get("http://127.0.0.1:8000/api/categories");
 
     const categoryId = context.params.categoryid;
+    
     const category = await axios.get(`http://127.0.0.1:8000/api/categories/${categoryId}`);
     return {
       props: {
         allcategories: categories.data,
-        // Pass event data to the page via props
         selectedCategory: category.data
       },
       revalidate: 30
@@ -51,9 +51,9 @@ export default function ProductsPage(props) {
   }
   
   export async function getStaticPaths() {
-    const categories = await axios.get("http://127.0.0.1:8000/api/categories");
+    const categories =  await axios.get(`http://127.0.0.1:8000/api/categories`);
     const pathsWithParams =  categories.data.map((category) => ({
-      params: { categoryid: category.id.toString()},
+      params: { categoryid: category.href.toString()},
     }))
   
     return {

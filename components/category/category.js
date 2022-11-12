@@ -3,7 +3,7 @@ import Link from "next/link"
 
  function Category(props) {
     const { id, name, image,href } = props;
-    const exploreLink = `/${href}`;  
+    const exploreLink = `/categories/${id}`;  
   return (
   <div className="lg:flex-1 w-1/3 md:w-1/4 lg:w-1/7">
 <Link href={exploreLink}>
