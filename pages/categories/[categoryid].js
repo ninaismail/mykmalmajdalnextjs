@@ -13,7 +13,7 @@ import ProductsCategoriesNav from '../../components/products/products-categories
 
 export default function ProductsPage(props) {
   const category = props.selectedCategory;
-  const { allcategories } = props;
+  const categories = props.allcategories;
 
     return (
       <div>
@@ -25,7 +25,7 @@ export default function ProductsPage(props) {
       <LangSwitch />
       <Header />
       <ProductsHeroSecion />
-      <ProductsCategoriesNav categories={allcategories}/>
+      <ProductsCategoriesNav categories={categories}/>
       <div className='mx-6'>
       <ProductsFilters/>
       <Products categoryId={category.id} />
@@ -36,10 +36,13 @@ export default function ProductsPage(props) {
     )
   }
   export async function getStaticProps(context) {
+    const categories = await axios.get("http://127.0.0.1:8000/api/categories");
+
     const categoryId = context.params.categoryid;
     const category = await axios.get(`http://127.0.0.1:8000/api/categories/${categoryId}`);
     return {
       props: {
+        allcategories: categories.data,
         // Pass event data to the page via props
         selectedCategory: category.data
       },
@@ -58,3 +61,4 @@ export default function ProductsPage(props) {
       fallback: false
     };
   }
+ 
