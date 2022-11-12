@@ -11,10 +11,12 @@ import Products from '../../components/products/products';
 import ProductsFilters from '../../components/products/products-filters'
 import Branches from '../../components/branches'
 import ProductsCategoriesNav from '../../components/products/products-categories-nav'
+import TypesNav from '../../components/types/types-nav'
 
 export default function ProductsPage(props) {
   const category = props.selectedCategory; 
   const categories = props.allcategories;
+  const types = props.alltypes;
     return (
       <div>
       <Head>
@@ -25,10 +27,15 @@ export default function ProductsPage(props) {
       <LangSwitch />
       <Header />
       <ProductsHeroSecion />
+
       <ProductsCategoriesNav categories={categories}/>
+         
       <div className='mx-6'>
       <ProductsFilters/>
+      <div className="my-10 bg-white border border-black shadow-xl px-6 py-4 relative z-1 w-3/4 h-auto mx-auto rounded-lg">
+      <TypesNav types={types}/>
       <Products categoryId={category.id} />
+      </div>
       </div>      
       <Branches/>
       <Footer />
@@ -37,6 +44,7 @@ export default function ProductsPage(props) {
   }
   export async function getStaticProps(context) {
     const categories = await axios.get("http://127.0.0.1:8000/api/categories");
+    const types = await axios.get("http://127.0.0.1:8000/api/types");
 
     const categoryId = context.params.categoryid;
     
@@ -44,6 +52,7 @@ export default function ProductsPage(props) {
     return {
       props: {
         allcategories: categories.data,
+        alltypes: types.data,
         selectedCategory: category.data
       },
       revalidate: 30
@@ -51,9 +60,9 @@ export default function ProductsPage(props) {
   }
   
   export async function getStaticPaths() {
-    const categories =  await axios.get(`http://127.0.0.1:8000/api/categories`);
+    const categories =  await axios.get("http://127.0.0.1:8000/api/categories");
     const pathsWithParams =  categories.data.map((category) => ({
-      params: { categoryid: category.href.toString()},
+      params: { categoryid: category.id.toString()},
     }))
   
     return {
