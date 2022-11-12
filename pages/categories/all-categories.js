@@ -1,4 +1,4 @@
-//import axios from '../../lib/axios';
+import axios from '../../lib/axios';
 
 import Head from 'next/head'
 import Header from '../../components/layout/main-header'
@@ -10,50 +10,7 @@ import ProductsList from '../../components/products/productslist';
 import ProductsFilters from '../../components/products/products-filters'
 import Branches from '../../components/branches'
 import ProductsCategoriesNav from '../../components/products/products-categories-nav'
-const categoriesdata = [
-  {
-    id: 1,
-    name: 'جميع المنتجات',
-    href: '/allcategories',
-    image: '/categories/allcategories.jpg',
-  },
-  {
-    id: 2,
-    name: 'المكسرات',
-    href: '/category-nuts',
-    image: '/categories/nuts.jpg',
-  },
-  {
-    id: 3,
-    name: 'قهوة',
-    href: '/category-coffee',
-    image: '/categories/coffee.jpg',
-  },
-  {
-    id: 4,
-    name: 'البسكويت',
-    href: '/category-cookies',
-    image: '/categories/cookies.jpg',
-  },
-  {
-    id: 5,
-    name: 'جندويات',
-    href: '/category-jandawiyat',
-    image: '/categories/coconut.jpg',
-  },
-  {
-    id: 6,
-    name: 'فواكه',
-    href: '/category-fruits',
-    image: '/categories/fruits.jpg',
-  },
-  {
-    id: 7,
-    name: 'شوكولاته',
-    href: '/category-chocolate',
-    image: '/categories/chocolate.jpg',
-  },  
-]
+
 const products = [
   {
     id: 1,
@@ -121,7 +78,8 @@ const products = [
   // More products...
 ]
 
-export default function ProductsPage() {
+export default function ProductsPage(props) {
+  const { categories } = props;
     return (
       <div>
       <Head>
@@ -132,7 +90,7 @@ export default function ProductsPage() {
       <LangSwitch />
       <Header />
       <ProductsHeroSecion />
-      <ProductsCategoriesNav productscategories={categoriesdata}/>
+      <ProductsCategoriesNav categories={categories}/>
       <div className='mx-6'>
       <ProductsFilters/>
       <ProductsList products={products} />
@@ -142,13 +100,13 @@ export default function ProductsPage() {
       </div>
     )
   }
-  // export async function getStaticProps() {
-
-  //   const response = await axios.get("http://127.0.0.1:8000/api/events");
-  //   return {
-  //       props: {
-  //           events: response.data
-  //       },
-  //   }
-  // }
+  export async function getStaticProps()
+   {
+    const response = await axios.get("http://127.0.0.1:8000/api/categories");
+    return {
+        props: {
+            categories: response.data
+        },
+    }
+  }
 

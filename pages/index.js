@@ -1,3 +1,5 @@
+import axios from '../lib/axios';
+
 import Head from 'next/head'
 import Header from '../components/layout/main-header'
 import Footer from '../components/layout/footer'
@@ -6,51 +8,8 @@ import CategoriesSection from '../components/categories-section'
 import Branches from '../components/branches'
 import LangSwitch from '../components/layout/langswitch'
 
-export default function Home() {
-  const categories = [
-    {
-      id: 1,
-      name: 'جميع المنتجات',
-      href: 'allcategories',
-      image: '/categories/allcategories.jpg',
-    },
-    {
-      id: 2,
-      name: 'المكسرات',
-      href: 'category-nuts',
-      image: '/categories/nuts.jpg',
-    },
-    {
-      id: 3,
-      name: 'قهوة',
-      href: 'category-coffee',
-      image: '/categories/coffee.jpg',
-    },
-    {
-      id: 4,
-      name: 'البسكويت',
-      href: 'category-cookies',
-      image: '/categories/cookies.jpg',
-    },
-    {
-      id: 5,
-      name: 'جندويات',
-      href: 'category-jandawiyat',
-      image: '/categories/coconut.jpg',
-    },
-    {
-      id: 6,
-      name: 'فواكه',
-      href: 'category-fruits',
-      image: '/categories/fruits.jpg',
-    },
-    {
-      id: 7,
-      name: 'شوكولاته',
-      href: 'category-chocolate',
-      image: '/categories/chocolate.jpg',
-    },  
-  ]  
+export default function Home(props) {
+  const { categories } = props;
   return (
     <div>
       <Head>
@@ -68,3 +27,12 @@ export default function Home() {
   )
 }
 
+export async function getStaticProps()
+{
+ const response = await axios.get("http://127.0.0.1:8000/api/categories");
+ return {
+     props: {
+         categories: response.data
+     },
+ }
+}

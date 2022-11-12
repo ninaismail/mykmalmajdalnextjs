@@ -1,17 +1,17 @@
 import ProductsCategory from "./products-category"
 
 function ProductsCategoriesNav(props) {
-  const { productscategories } = props;
+  const { categories } = props;
   
   return (
 <div dir="rtl"className="relative right-0 bottom-[18em] flex flex-wrap justify-center">
-{Array.isArray(productscategories)&&productscategories.map((productscategory) => (
+{Array.isArray(categories)&&categories.map((category) => (
  <ProductsCategory 
- key={productscategory.id}
- id={productscategory.id}
- name={productscategory.name}
- href={productscategory.href}
- image={productscategory.image}
+ key={category.id}
+ id={category.id}
+ name={category.name}
+ href={category.href}
+ image={category.image}
  />
 ))}  
 </div>
