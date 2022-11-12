@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import {BiChevronDown} from 'react-icons/bi'
 
-function ProductsFilters(props) {
+function ProductsFilters() {
 
   return (
-<div className="shadow-xl md:w-1/6 sm:w-1/3 w-1/3 top-0 relative right-0 mx-6"style={{"margin-top": "-140px"}}>
+<div className="shadow-xl md:w-1/6 sm:w-1/3 w-1/3 top-0 relative right-0 mx-6" style={{"margin-top": "-180px"}}>
 <select id="pricefilter" className="bg-orange-500 text-white border border-orange-500
 rounded-lg block w-full px-6 py-3">
   <option className="bg-white text-black"selected>رتّب بحسب:</option>
