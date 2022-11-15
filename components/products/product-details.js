@@ -1,6 +1,6 @@
 import {BiShoppingBag} from 'react-icons/bi'
 import Image from 'next/image'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function ProductDetails(props) {
     const { title, description, image, image2, image3, image4, price, category_id } = props;
@@ -25,13 +25,16 @@ export default function ProductDetails(props) {
           {mainimage == 0 && <Image width="885" height="891"
             src={image}
             alt={title}
-            />} {mainimage == 1 && <Image width="885" height="891"
+            />} 
+            {mainimage == 1 && <Image width="885" height="891"
             src={image2}
             alt={title}
-            />} {mainimage == 2 && <Image width="885" height="891"
+            />} 
+            {mainimage == 2 && <Image width="885" height="891"
             src={image3}
             alt={title}
-            />} {mainimage == 3 && <Image width="885" height="891"
+            />} 
+            {mainimage == 3 && <Image width="885" height="891"
             src={image4}
             alt={title}
             />}                 

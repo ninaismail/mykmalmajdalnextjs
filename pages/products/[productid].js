@@ -13,7 +13,7 @@ function ProductDetailPage(props) {
   const categories = props.allcategories;
   const product = props.selectedProduct;
   if (!product) {
-    return (
+    return (    
       <div className="center">
         <p>Loading...</p>
       </div>
@@ -39,12 +39,13 @@ function ProductDetailPage(props) {
          key={product.id}
          id={product.id}
          title={product.title}
+         description={product.description}
          price={product.price}
+         image={product.image}   
+         image2={product.image2} 
+         image3={product.image3} 
+         image4={product.image4} 
          category_id={product.category_id}
-         image={product.image} 
-         image2={product.image} 
-         image3={product.image} 
-         image4={product.image} 
        />
       <Footer />
     </Fragment>
