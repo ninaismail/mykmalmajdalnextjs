@@ -3,7 +3,6 @@ import Image from 'next/image'
 
 export default function ProductDetails(props) {
     const { title, description, image,image2,image3,image4, price, category_id } = props;
-   const stringdescription= JSON.stringify(description);
     //   const gobacklink = `/categories/${category_id}`; 
 
     return (
@@ -14,16 +13,16 @@ export default function ProductDetails(props) {
             <h2 className="font-Roboto font-bold md:text-4xl text-2xl">
                 {title}   
             </h2>
-            <p className="font-Roboto mb-4 md:text-2xl text-xl">{stringdescription}</p>
+            <p className="font-Roboto">{description}</p>
             <h2 className="font-Roboto font-bold mt-4 md:text-4xl text-2xl">
                 {price}   
             </h2>           
             <div className="flex justify-center items-center">
-            <div className="md:w-1/3 md:mx-2">
+            <div className="md:w-1/3">
             <input
                 type="number"
                 class="form-control w-full px-3 py-1.5
-                text-base font-Roboto  bg-white bg-clip-padding
+                text-base font-Roboto bg-white bg-clip-padding
                 border border-solid border-gray-300 rounded
                 transition ease-in-out m-0 focus:bg-white focus:outline-none"
                 id="quantityinput"
