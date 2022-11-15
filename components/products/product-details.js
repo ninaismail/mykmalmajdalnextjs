@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react';
 
 export default function ProductDetails(props) {
-    const { title, description, image,image2,image3,image4, price, category_id } = props;
+    const { title, description, image, image2, image3, image4, price, category_id } = props;
     //   const gobacklink = `/categories/${category_id}`; 
     const [mainimage, setMainImage] = useState(0);
 
@@ -25,36 +25,32 @@ export default function ProductDetails(props) {
           {mainimage == 0 && <Image width="885" height="891"
             src={image}
             alt={title}
-            className="hover:opacity-75"
             />} {mainimage == 1 && <Image width="885" height="891"
             src={image2}
             alt={title}
-            className="hover:opacity-75 "
             />} {mainimage == 2 && <Image width="885" height="891"
             src={image3}
             alt={title}
-            className="hover:opacity-75 "
             />} {mainimage == 3 && <Image width="885" height="891"
             src={image4}
             alt={title}
-            className="hover:opacity-75 "
             />}                 
           </div>
           <div className="md:w-1/3 w-full flex flex-row md:block">
           <Image width="885" height="891"
             src={image2}
             alt={title}
-            className="hover:opacity-75 w-1/3 md:w-full cursor-pointer"
+            className="opacity-75 hover:opacity-100 w-1/3 md:w-full cursor-pointer"
             onClick={() => setMainImage(1)}/>               
             <Image width="885" height="891"
             src={image3}
             alt={title}
-            className="hover:opacity-75 w-1/3 md:w-full cursor-pointer"
+            className="opacity-75 hover:opacity-100 w-1/3 md:w-full cursor-pointer"
             onClick={() => setMainImage(2)}/>               
             <Image width="885" height="891"
             src={image4}
             alt={title}
-            className="hover:opacity-75 w-1/3 md:w-full cursor-pointer"
+            className="opacity-75 hover:opacity-100 w-1/3 md:w-full cursor-pointer"
             onClick={() => setMainImage(3)}/>               
           </div>
         </div>

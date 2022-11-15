@@ -3,7 +3,7 @@
     import Link from "next/link"
     
 export default function Product(props) {
-    const { id, title, image, price } = props;
+    const { id, title, image,  price } = props;
 
     const exploreLink = `/products/${id}`;  
 
