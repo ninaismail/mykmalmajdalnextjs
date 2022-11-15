@@ -11,7 +11,7 @@ export default function Product(props) {
     <div className="text-center">
     <Link key={id} href={exploreLink} >
         <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
-        <Image
+        <Image width="885" height="891"
             src={image}
             alt={title}
             className="h-full w-full object-cover object-center group-hover:opacity-75"

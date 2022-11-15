@@ -1,7 +1,7 @@
 import axios from '../../lib/axios';
 import { Fragment } from 'react';
-import Head from 'next/head';
 
+import Head from 'next/head';
 import ProductDetails from '../../components/products/product-details';
 import Header from '../../components/layout/main-header'
 import Footer from '../../components/layout/footer'
@@ -10,7 +10,7 @@ import ProductsCategoriesNav from '../../components/products/products-categories
 import LangSwitch from '../../components/layout/langswitch'
 
 function ProductDetailPage(props) {
-  
+  const categories = props.allcategories;
   const product = props.selectedProduct;
   if (!product) {
     return (
