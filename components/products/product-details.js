@@ -39,28 +39,28 @@ export default function ProductDetails(props) {
            </div>
         </div>
         <div className="md:w-1/2 flex justify-center items-center">
-          <div className="md:w-2/3">
+          <div className="md:w-2/3 w-full">
             <Image width="885" height="891"
             src={image}
             alt={title}
             className="hover:opacity-75"
             />                
           </div>
-          <div className="md:w-1/3">
+          <div className="md:w-1/3 w-full flex md:flex-column">
           <Image width="885" height="891"
             src={image}
             alt={title}
-            className="hover:opacity-75"
+            className="hover:opacity-75 w-1/3 md:w-full"
             />                
             <Image width="885" height="891"
             src={image}
             alt={title}
-            className="hover:opacity-75"
+            className="hover:opacity-75 w-1/3 md:w-full"
             />                
             <Image width="885" height="891"
             src={image}
             alt={title}
-            className="hover:opacity-75"
+            className="hover:opacity-75 w-1/3 md:w-full"
             />                                
           </div>
         </div>
