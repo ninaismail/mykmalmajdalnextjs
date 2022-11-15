@@ -17,28 +17,8 @@ export default function ProductDetails(props) {
             <h2 className="font-Roboto font-bold mt-4 md:text-4xl text-2xl">
                 {price}   
             </h2>           
-            <div className="flex justify-center items-center">
-            <div className="md:w-1/3">
-            <input
-                type="number"
-                class="form-control w-full px-3 py-1.5
-                text-base font-Roboto bg-white bg-clip-padding
-                border border-solid border-gray-300 rounded
-                transition ease-in-out m-0 focus:bg-white focus:outline-none"
-                id="quantityinput"
-                placeholder="الكمية"
-            />
-            </div>            
-            <div className="md:w-2/3 md:mx-2">
-            <button className='bg-orange-500 px-6 py-2 w-full 
-            text-white hover:bg-orange-700 rounded-lg 
-            border-orange-500 hover:border-orange-700'>إضافة إلى السلة
-            <BiShoppingBag size="20px"color="white" className='inline'/>
-            </button>
-            </div>
-           </div>
         </div>
-        <div className="md:w-1/2 flex justify-center items-center">
+        <div className="md:w-1/2 md:flex md:justify-center md:items-center">
           <div className="md:w-2/3 w-full">
             <Image width="885" height="891"
             src={image}
@@ -46,7 +26,7 @@ export default function ProductDetails(props) {
             className="hover:opacity-75"
             />                
           </div>
-          <div className="md:w-1/3 w-full flex md:flex-column">
+          <div className="md:w-1/3 w-full flex flex-row md:block">
           <Image width="885" height="891"
             src={image}
             alt={title}
@@ -64,7 +44,27 @@ export default function ProductDetails(props) {
             />                                
           </div>
         </div>
-     </div>     
+     </div>    
+     <div className="md:w-1/2 md:flex justify-center items-center">
+            <div className="md:w-1/3 w-full my-2">
+            <input
+                type="number"
+                class="form-control w-full px-3 py-1.5
+                text-base font-Roboto bg-white bg-clip-padding
+                border border-solid border-gray-300 rounded
+                transition ease-in-out m-0 focus:bg-white focus:outline-none"
+                id="quantityinput"
+                placeholder="الكمية"
+            />
+            </div>            
+            <div className="md:w-2/3 w-full md:mr-2">
+            <button className='bg-orange-500 px-6 py-2 w-full 
+            text-white hover:bg-orange-700 rounded-lg 
+            border-orange-500 text-sm hover:border-orange-700'>إضافة إلى السلة
+            <BiShoppingBag size="20px"color="white" className='inline'/>
+            </button>
+            </div>
+           </div> 
     </div>    
     )
   }
