@@ -8,7 +8,7 @@ const CartContext = createContext({
   itemIsAddedtoCart: (productId) => {}
 });
 
-export function ProductsinCartContextProvider(props) {
+export function CartContextProvider(props) {
 const [userProducts, setUserProducts] = useState([]);
 
   function addProductHandler(addedProduct) {
