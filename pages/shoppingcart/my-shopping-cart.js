@@ -27,17 +27,17 @@ function CartPage(props) {
       name='description'
       content=''
     />
-  </Head>
-  <LangSwitch />
-  <Header />
-  <ProductsHeroSecion />
-  <ProductsCategoriesNav categories={categories}/>
-  <div className="text-center">
-  <p>You don't have any products yet. Start adding some?</p>
-  </div>
-  <Footer />
-</Fragment>
-    } else {
+    </Head>
+    <LangSwitch />
+    <Header />
+    <ProductsHeroSecion />
+    <ProductsCategoriesNav categories={categories}/>
+    <div className="text-center">
+    <p>You don't have any products yet. Start adding some?</p>
+    </div>
+    <Footer />
+    </Fragment>
+  } else {
     content = 
     <Fragment>
     <Head>
