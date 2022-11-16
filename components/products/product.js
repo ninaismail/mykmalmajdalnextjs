@@ -1,15 +1,34 @@
-    import {BiShoppingBag} from 'react-icons/bi'
-    import Image from 'next/image'
-    import Link from "next/link"
+import { useContext } from 'react';
+
+import CartContext from '../../store/cart-context';
+
+import {BiShoppingBag} from 'react-icons/bi'
+import Image from 'next/image'
+import Link from "next/link"
     
 export default function Product(props) {
     const { id, title, image,  price } = props;
 
     const exploreLink = `/products/${id}`;  
 
+    const productsCtx = useContext(CartContext);
+    const itemIsAddedtoCart = productsCtx.itemIsAddedtoCart(id);
+
+    function toggleInCartStatusHandler() {
+      if (itemIsAddedtoCart) {
+        productsCtx.removeProductfromCart(id);
+      } else {
+        productsCtx.addProducttoCart({
+          id: id,
+          title: title,
+          price: price,
+          image: image,
+        });
+      }
+    }
     return (
-    <div className="text-center">
-    <Link key={id} href={exploreLink} >
+    <div key={id} className="text-center">
+    <Link href={exploreLink} >
         <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
         <Image width="885" height="891"
             src={image}
@@ -21,7 +40,8 @@ export default function Product(props) {
         <p className="mt-1 text-lg font-medium text-gray-900">{price}</p>
     </Link>
     <button className='bg-orange-500 px-6 py-2 w-full hover:bg-orange-700 rounded-lg 
-    border-orange-500 hover:border-orange-700'>
+    border-orange-500 hover:border-orange-700' onClick={toggleInCartStatusHandler}>
+    {itemIsAddedtoCart ? 'Remove from Cart' : 'To Cart!'}
     <BiShoppingBag size="30px"color="white" className="mx-auto"/>
     </button>
     </div>

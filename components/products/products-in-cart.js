@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 
 import ProductsList from '../products/products-list';
 
-function Products(props) {
-  const { categoryId } = props;
+function ProductsInCart(props) {
+    const { productId } = props;
 
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-      fetch(`http://127.0.0.1:8000/api/categories/${categoryId}/product`)
+      fetch(`http://127.0.0.1:8000/api/products/${productId}`)
         .then((response) => response.json())
         .then((data) => {
           setProducts(data);
@@ -23,4 +23,4 @@ function Products(props) {
   );
 }
 
-export default Products;
+export default ProductsInCart;

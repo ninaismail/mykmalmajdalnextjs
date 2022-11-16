@@ -1,8 +1,10 @@
+import { useContext } from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import React, { useState , useRef} from "react";
 import {FaSearch} from 'react-icons/fa'
 import {BiShoppingBag} from 'react-icons/bi'
+import CartContext from '../../store/cart-context';
 
 import NavItem from "./header-item";
 const MENU_LIST = [
@@ -20,6 +22,8 @@ const Navbar = () => {
   const [style, setStyle] = useState({display: 'none'});
   const [lang, setLang] = useState("AR");
   const [lang1, setLang1] = useState("EN");
+
+  const productsCtx = useContext(CartContext);
   return (
 <header>
   <nav>
@@ -55,7 +59,12 @@ const Navbar = () => {
             required=""/>
         </div>
     </form>
-    <BiShoppingBag size="50px"color="orange" className="cursor-pointer"/>
+    <button type="button" class="inline-flex relative items-center p-3">
+      <BiShoppingBag size="50px"color="orange" className="cursor-pointer"/>
+      <div class="inline-flex absolute top-[5px] -right-2 justify-center items-center w-6 h-6 text-xs font-bold text-white bg-red-500 rounded-full">
+      {productsCtx.totalProductsinCart}
+      </div>
+    </button>
     <div className="nav__menu-bar"
       onClick={() => setNavActive(!navActive)}
     >
