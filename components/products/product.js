@@ -12,17 +12,17 @@ export default function Product(props) {
     const exploreLink = `/products/${id}`;  
 
     const productsCtx = useContext(CartContext);
-    const itemIsAddedtoCart = productsCtx.itemIsAddedtoCart(id);
+    const itemIsAddedtoCart = productsCtx.itemIsAddedtoCart(props.idCtx);
 
     function toggleInCartStatusHandler() {
       if (itemIsAddedtoCart) {
-        productsCtx.removeProductfromCart(id);
+        productsCtx.removeProductfromCart(props.idCtx);
       } else {
         productsCtx.addProducttoCart({
-          id: id,
-          title: title,
-          price: price,
-          image: image,
+          id: props.idCtx,
+          title: props.titleCtx,
+          price: props.priceCtx,
+          image: props.imageCtx,
         });
       }
     }
@@ -42,7 +42,7 @@ export default function Product(props) {
     <button className='bg-orange-500 px-6 py-2 w-full hover:bg-orange-700 rounded-lg 
     border-orange-500 hover:border-orange-700' onClick={toggleInCartStatusHandler}>
     {itemIsAddedtoCart ? 'Remove from Cart' : 'To Cart!'}
-    <BiShoppingBag size="30px"color="white" className="mx-auto"/>
+    <BiShoppingBag size="30px"color="white" className="cursor-pointer mx-auto"/>
     </button>
     </div>
     )
