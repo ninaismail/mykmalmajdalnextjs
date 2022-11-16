@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { Fragment } from 'react';
+import axios from '../../lib/axios';
 
 import Head from 'next/head';
 import Header from '../../components/layout/main-header'
@@ -11,7 +12,7 @@ import LangSwitch from '../../components/layout/langswitch'
 import CartContext from '../../store/cart-context';
 import ProductsList from '../../components/products/products-list';
 
-function CartPage() {
+function CartPage(props) {
   const productsCtx = useContext(CartContext);
   const categories = props.allcategories;
 
@@ -62,8 +63,6 @@ function CartPage() {
     </section>
   );
 }
-
-export default CartPage;
 export async function getStaticProps() {
   const categories = await axios.get("http://127.0.0.1:8000/api/categories");
  return {
@@ -73,3 +72,4 @@ export async function getStaticProps() {
     revalidate: 30
   };
 }
+export default CartPage;
