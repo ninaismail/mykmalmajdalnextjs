@@ -13,6 +13,7 @@ import ProductsList from '../../components/products/products-list';
 
 function CartPage() {
   const productsCtx = useContext(CartContext);
+  const categories = props.allcategories;
 
   let content;
 
@@ -63,3 +64,12 @@ function CartPage() {
 }
 
 export default CartPage;
+export async function getStaticProps() {
+  const categories = await axios.get("http://127.0.0.1:8000/api/categories");
+ return {
+    props: {
+      allcategories: categories.data,
+    },
+    revalidate: 30
+  };
+}
