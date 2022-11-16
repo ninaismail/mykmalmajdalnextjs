@@ -14,7 +14,7 @@ function ProductDetailPage(props) {
   const product = props.selectedProduct;
   if (!product) {
     return (    
-      <div className="center">
+      <div className="text-center">
         <p>Loading...</p>
       </div>
     );

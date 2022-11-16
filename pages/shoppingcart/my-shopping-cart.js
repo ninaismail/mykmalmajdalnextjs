@@ -32,7 +32,9 @@ function CartPage(props) {
   <Header />
   <ProductsHeroSecion />
   <ProductsCategoriesNav categories={categories}/>
-  <p>You don't have any products yet. Start adding some?</p>;
+  <div className="text-center">
+  <p>You don't have any products yet. Start adding some?</p>
+  </div>
   <Footer />
 </Fragment>
     } else {
