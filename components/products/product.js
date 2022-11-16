@@ -40,9 +40,9 @@ export default function Product(props) {
         <p className="mt-1 text-lg font-medium text-gray-900">{price}</p>
     </Link>
     <button className='bg-orange-500 px-6 py-2 w-full hover:bg-orange-700 rounded-lg 
-    border-orange-500 hover:border-orange-700' onClick={toggleInCartStatusHandler}>
+    border-orange-500 hover:border-orange-700 text-white' onClick={toggleInCartStatusHandler}>
     {itemIsAddedtoCart ? 'Remove from Cart' : 'To Cart!'}
-    <BiShoppingBag size="30px"color="white" className="cursor-pointer mx-auto"/>
+    <BiShoppingBag size="30px"color="white" className="inline cursor-pointer mx-auto"/>
     </button>
     </div>
     )
