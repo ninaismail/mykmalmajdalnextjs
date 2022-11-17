@@ -61,7 +61,7 @@ const Navbar = () => {
     <Link href={"/shoppingcart/my-shopping-cart"} type="button" class="inline-flex relative items-center p-3">
       <BiShoppingBag size="50px"color="orange" className="cursor-pointer"/>
       <div class="inline-flex absolute top-[5px] -right-2 justify-center items-center w-6 h-6 text-xs font-bold text-white bg-red-500 rounded-full">
-      {totalItems }
+      {totalItems}
       </div>
     </Link>
     <div className="nav__menu-bar"

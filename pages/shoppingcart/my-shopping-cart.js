@@ -1,6 +1,6 @@
-import { useContext } from 'react';
 import { Fragment } from 'react';
 import axios from '../../lib/axios';
+import Image from "next/image";
 
 import Head from 'next/head';
 import Header from '../../components/layout/main-header'
@@ -14,9 +14,9 @@ import { useCart } from "react-use-cart";
 
 function CartPage(props) {
   const categories = props.allcategories;
-  const products = props.allproducts;
     const {
       isEmpty,
+      cartTotal,
       totalItems,
       items,
       updateItemQuantity,
@@ -55,25 +55,70 @@ function CartPage(props) {
       <ProductsHeroSecion />
 
       <ProductsCategoriesNav categories={categories}/>
-      <h1>Cart ({totalItems})</h1>
-      <ul>
-          {items.map((item) => (
-            <li key={item.id}>
-              {item.quantity} x {item.title} &mdash;
-              <button
-                onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
-              >
-                -
-              </button>
-              <button
-                onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
-              >
-                +
-              </button>
-              <button onClick={() => removeItem(item.id)}>&times;</button>
-            </li>
-          ))}
+<div class="shadow-xl " style={{"margin-top": "-200px"}}>
+  <div class="py-6 px-4 sm:px-6">
+      <h1 class="text-lg font-bold">منتجاتك</h1>
+      <ul class="-my-6 divide-y divide-gray-200">
+        {items.map((item) => (
+        <li class="flex items-start justify-between">
+          <div class="flex-1 flex items-start justify-start">
+            <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border 
+            border-gray-200">
+            <Image width="885" height="891"
+                src={item.image}
+                alt={item.title}
+                className="h-full w-full object-cover object-center group-hover:opacity-75"
+            /> 
+            </div>
+            <h3 className="mt-2 text-xl font-bold">{item.title}</h3>
+          </div>
+          <div class="flex-1 flex flex-col items-end">
+              <p className="text-lg font-medium text-gray-900">{item.price}</p>
+              <div className='w-1/5 flex justify-ceendnter items-center 
+              border border-gray-500'>
+                <button class="w-1/3 h-full font-medium bg-orange-500 hover:bg-orange-700 text-white"
+                  onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
+                >
+                  -
+                </button>
+                <p class="w-1/3 h-full text-center m-auto font-medium">{item.quantity}</p>
+                <button class="w-1/3 h-full font-medium bg-orange-500 hover:bg-orange-700 text-white"
+                  onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
+                >
+                  +
+                </button>
+            </div>
+          </div>
+          <div class="flex-1 text-end">
+                <button type="button" class="font-medium text-orange-700 hover:text-orange-500"
+                onClick={() => removeItem(item.id)}>إزالة</button>
+          </div>
+        </li>
+        ))}
         </ul>
+  </div>
+  <div class="border-t border-gray-200 py-6 px-4 sm:px-6">
+  <div class="flex justify-between text-base font-medium text-gray-900">
+  <p>السعر الإجمالي:</p>
+  <p>{cartTotal}</p>
+  </div>
+  <p class="mt-0.5 text-sm text-gray-500">الشحن والضرائب تحسب عند الخروج.</p>
+  <div class="mt-6">
+  <a href="#" class="flex items-center justify-center rounded-md border border-transparent 
+  bg-orange-500 px-6 py-3 text-base font-medium 
+  text-white shadow-sm hover:bg-orange-700">الشراء</a>
+  </div>
+  <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
+  <p>
+  <span class="font-medium">أو&nbsp; </span>
+      <button type="button" class="font-medium text-orange-500 hover:text-orange-700">
+      تابع التسوّق
+      <span aria-hidden="true"> &larr;</span>
+      </button>
+  </p>
+  </div>
+  </div>
+</div>
       <Footer />
     </Fragment>
     );
