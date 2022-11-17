@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function ProductsCategory(props) {
     const { id, name, image, href } = props;
-    const exploreLink = `/${href}`;  
+    const exploreLink = `/categories/${id}`;  
   return (
 <div className="relative lg:flex-1 w-1/3 md:w-1/4 lg:w-1/7 w-full h-ful">
 <Link href={exploreLink} className="flex items-center justify-center">
