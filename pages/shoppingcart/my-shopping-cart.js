@@ -95,7 +95,7 @@ function CartPage(props) {
     )
     
     return (
-      <Fragment>
+    <Fragment>
     <Head>
         <title>My Cart</title>
         <meta
@@ -108,7 +108,7 @@ function CartPage(props) {
       <ProductsHeroSecion />
 
       <ProductsCategoriesNav categories={categories}/>
-    {content}
+      {content}
       <Footer />
     </Fragment>
     )

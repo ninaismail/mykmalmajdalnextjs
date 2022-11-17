@@ -34,6 +34,9 @@ select{
   -o-appearance: none;
   appearance: none;
 }
+::selection {
+  background-color: orange;
+}
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap');
 
 a{
