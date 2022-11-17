@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import ProductsList from '../products/products-list';
+import Product from '../products/product';
 
 function Products(props) {
   const { categoryId } = props;
@@ -18,7 +18,7 @@ function Products(props) {
 
   return ( 
     <div>
-      <ProductsList products={products} />
+      <Product products={products} />
     </div>
   );
 }

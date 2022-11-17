@@ -12,6 +12,8 @@ import LangSwitch from '../../components/layout/langswitch'
 function ProductDetailPage(props) {
   const categories = props.allcategories;
   const product = props.selectedProduct;
+
+  
   if (!product) {
     return (    
       <div className="text-center">

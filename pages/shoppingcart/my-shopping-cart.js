@@ -9,18 +9,21 @@ import ProductsHeroSecion from '../../components/products/products-hero-section'
 import ProductsCategoriesNav from '../../components/products/products-categories-nav'
 import LangSwitch from '../../components/layout/langswitch'
 
-import CartContext from '../../store/cart-context';
-import ProductsList from '../../components/products/products-list';
+import { useCart } from "react-use-cart";
+// import Productfrom '../../components/products/products';
 
 function CartPage(props) {
-  const productsCtx = useContext(CartContext);
   const categories = props.allcategories;
-
-  let content;
-
-  if (productsCtx.totalProductsinCart === 0) {
-    content = 
-    <Fragment>
+  const products = props.allproducts;
+    const {
+      isEmpty,
+      totalItems,
+      items,
+      updateItemQuantity,
+      removeItem,
+    } = useCart();
+  
+    if (isEmpty) return<Fragment>
     <Head>
     <title>My Cart</title>
     <meta
@@ -36,10 +39,10 @@ function CartPage(props) {
     <p>You don't have any products yet. Start adding some?</p>
     </div>
     <Footer />
-    </Fragment>
-  } else {
-    content = 
-    <Fragment>
+    </Fragment>;
+  
+    return (
+      <Fragment>
     <Head>
         <title>My Cart</title>
         <meta
@@ -52,24 +55,37 @@ function CartPage(props) {
       <ProductsHeroSecion />
 
       <ProductsCategoriesNav categories={categories}/>
-      <ProductsList products={productsCtx.cartproducts} />;
-
+      <h1>Cart ({totalItems})</h1>
+      <ul>
+          {items.map((item) => (
+            <li key={item.id}>
+              {item.quantity} x {item.title} &mdash;
+              <button
+                onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
+              >
+                -
+              </button>
+              <button
+                onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
+              >
+                +
+              </button>
+              <button onClick={() => removeItem(item.id)}>&times;</button>
+            </li>
+          ))}
+        </ul>
       <Footer />
     </Fragment>
-  }
-
-  return (
-    <section>
-      <h1>My Products</h1>
-      {content}
-    </section>
-  );
+    );
 }
 export async function getStaticProps() {
   const categories = await axios.get("http://127.0.0.1:8000/api/categories");
+  const products = await axios.get("http://127.0.0.1:8000/api/products");
+
  return {
     props: {
       allcategories: categories.data,
+      allproducts: products.data,
     },
     revalidate: 30
   };
