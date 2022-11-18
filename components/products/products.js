@@ -14,7 +14,7 @@ function Products(props) {
           setProducts(data);
           console.log(data)
         });
-  },[]);
+  },[categoryId]);
 
   return ( 
       <Product products={products} />
