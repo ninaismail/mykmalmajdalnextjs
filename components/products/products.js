@@ -17,9 +17,7 @@ function Products(props) {
   },[]);
 
   return ( 
-    <div>
       <Product products={products} />
-    </div>
   );
 }
 

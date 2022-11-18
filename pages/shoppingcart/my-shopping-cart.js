@@ -1,6 +1,6 @@
-import { Fragment } from 'react';
 import axios from '../../lib/axios';
 import Image from "next/image";
+import { useEffect, useState } from 'react';
 
 import Head from 'next/head';
 import Header from '../../components/layout/main-header'
@@ -13,20 +13,19 @@ import { useCart } from "react-use-cart";
 
 function CartPage(props) {
   const categories = props.allcategories;
-    const {
-      isEmpty,
-      cartTotal,
-      totalItems,
-      items,
-      updateItemQuantity,
-      removeItem,
-    } = useCart();
-    let content;
+  const {
+    isEmpty,
+    cartTotal,
+    items,
+    updateItemQuantity,
+    removeItem,
+  } = useCart();
+
+  let content;
     if (isEmpty){
-      content =
-    <div className="text-center">
-    <p>لا يوجد لديك منتجات في السلة.</p>
-    </div>
+      content = <div className="text-center">
+      <p>لا يوجد لديك منتجات في السلة.</p>
+      </div>
     } else (
       content = <div class="shadow-xl " style={{"margin-top": "-200px"}}>
       <div class="py-6 px-4 sm:px-6">
@@ -93,9 +92,9 @@ function CartPage(props) {
       </div>
     </div>
     )
-    
+  
     return (
-    <Fragment>
+      <>
     <Head>
         <title>My Cart</title>
         <meta
@@ -110,7 +109,7 @@ function CartPage(props) {
       <ProductsCategoriesNav categories={categories}/>
       {content}
       <Footer />
-    </Fragment>
+    </>
     )
 }
 export async function getStaticProps() {

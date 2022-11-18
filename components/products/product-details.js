@@ -7,9 +7,9 @@ export default function ProductDetails(props) {
     //   const gobacklink = `/categories/${category_id}`; 
     const [mainimage, setMainImage] = useState(0);
 
-    return (
-    <div className="my-10 bg-white border border-black shadow-xl px-6 py-4 
-     relative z-1 w-3/4 h-auto mx-auto rounded-lg"style={{"margin-top": "-180px"}}>
+  return (
+  <div className="my-10 bg-white border border-black shadow-xl px-6 py-4 
+  relative z-1 w-3/4 h-auto mx-auto rounded-lg"style={{"margin-top": "-180px"}}>
       <div className="md:flex justify-center items-center">
         <div className="md:w-1/2">
             <h2 className="font-Roboto font-bold md:text-4xl text-2xl">
@@ -77,7 +77,7 @@ export default function ProductDetails(props) {
             <BiShoppingBag size="20px"color="white" className='inline'/>
             </button>
             </div>
-           </div> 
+      </div> 
     </div>    
     )
   }

@@ -1,5 +1,4 @@
 import axios from '../../lib/axios';
-import { Fragment } from 'react';
 
 import Head from 'next/head';
 import ProductDetails from '../../components/products/product-details';
@@ -23,7 +22,7 @@ function ProductDetailPage(props) {
   }
 
   return (
-    <Fragment>
+    <div>
         <Head>
         <title>{product.title}</title>
         <meta
@@ -50,7 +49,7 @@ function ProductDetailPage(props) {
          category_id={product.category_id}
        />
       <Footer />
-    </Fragment>
+    </div>
   );
 }
 export async function getStaticProps(context) {
