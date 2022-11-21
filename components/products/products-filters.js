@@ -23,13 +23,13 @@ function sortData(data) {
   let sortedData;
   if (sortPrice === 'descending') {
     sortedData = [...data].sort((a, b) => {
-      return b.price.localeCompare(a.price);
+      return b.price - a.price;
     });
     console.log("high to low")
     console.log(sortedData)
   } else if (sortPrice === 'ascending') {
     sortedData = [...data].sort((a, b) => {
-      return a.price.localeCompare(b.price);
+      return a.price - b.price;
     });
     console.log("low to high")
     console.log(sortedData) 
