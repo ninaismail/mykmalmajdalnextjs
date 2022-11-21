@@ -1,4 +1,5 @@
 import axios from '../../lib/axios';
+import { useState, useEffect } from 'react';
 
 import Head from 'next/head'
 import Header from '../../components/layout/main-header'
@@ -16,6 +17,29 @@ export default function ProductsPage(props) {
   const categories = props.allcategories;
   const types = props.alltypes;
   const products = props.allproducts;
+  
+
+  // using data from parameter instead of state
+function sortData(data) {
+  let sortedData;
+  if (selectedpriceorder === 'descending') {
+    sortedData = [...data].sort((a, b) => {
+      return b.price - a.price;
+    });
+    console.log("high to low")
+    console.log(sortedData)
+  } else if (selectedpriceorder === 'ascending') {
+    sortedData = [...data].sort((a, b) => {
+      return a.price - b.price;
+    });
+    console.log("low to high")
+    console.log(sortedData) 
+  } else {
+    return data;
+  }
+  setData(sortedData);
+}
+const sortedproducts = sortData(products);
     return (
       <div>
       <Head>
@@ -33,7 +57,7 @@ export default function ProductsPage(props) {
       <ProductsFilters/>
       <div className="my-10 bg-white border border-black shadow-xl px-6 py-4 relative z-1 w-3/4 h-auto mx-auto rounded-lg">
       <TypesNav types={types}/>
-      <Product products={products} />
+      <Product products={sortedproducts} />
       </div>
       </div>      
       <Branches/>

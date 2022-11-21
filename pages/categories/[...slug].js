@@ -1,4 +1,5 @@
 import axios from '../../lib/axios';
+import { useState } from 'react';
 
 import Head from 'next/head'
 import Header from '../../components/layout/main-header'
@@ -12,13 +13,13 @@ import Branches from '../../components/branches'
 import ProductsCategoriesNav from '../../components/products/products-categories-nav'
 import TypesNav from '../../components/types/types-nav'
 
-export default function FilterProductsPage(props) {
+function FilterProductsPage(props) {
   const categories = props.allcategories;
   const types = props.alltypes;
-  const products = props.allproducts;
+  // const products = props.allproducts;  
+  const sortedproducts = sortData(data);  
 
-
-    return (
+  return (
       <div>
       <Head>
       <title>{category.name}</title>
@@ -35,7 +36,7 @@ export default function FilterProductsPage(props) {
       <ProductsFilters/>
       <div className="my-10 bg-white border border-black shadow-xl px-6 py-4 relative z-1 w-3/4 h-auto mx-auto rounded-lg">
       <TypesNav types={types}/>
-      <Product products={products} />
+      <Product products={sortedproducts} />
       </div>
       </div>      
       <Branches/>
@@ -53,8 +54,33 @@ export default function FilterProductsPage(props) {
         allcategories: categories.data,
         alltypes: types.data,
         allproducts: products.data,
-
       },
       revalidate: 30
     };
   }
+  // using data from parameter instead of state
+//   export async function getSortedData(sortPrice) {
+//   const { price } = sortPrice;
+
+//   const res = await fetch("http://127.0.0.1:8000/api/products");
+//   const allproducts = await res.json()
+
+//   let sortedData;
+//   if (sortPrice === 'descending') {
+//     sortedData = [...allproducts].sort((a, b) => {
+//       return b.price - a.price;
+//     });
+//     console.log("high to low")
+//     console.log(sortedData)
+//   } else if (sortPrice === 'ascending') {
+//     sortedData = [...allproducts].sort((a, b) => {
+//       return a.price - b.price;
+//     });
+//     console.log("low to high")
+//     console.log(sortedData) 
+//   } else {
+//     return data;
+//   }
+//     return sortedData;
+// }
+export default FilterProductsPage;
