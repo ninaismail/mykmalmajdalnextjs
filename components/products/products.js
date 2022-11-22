@@ -9,7 +9,6 @@ import Type from "../types/type"
 
 export default function Products() {
     const [types, setTypes] = useState([]);
-     console.log(types)
     const { addItem } = useCart();
     
     const [sortPrice, setPriceOrder] = useState("default");
@@ -21,10 +20,12 @@ export default function Products() {
       const products =  await fetch("http://127.0.0.1:8000/api/products");
       const data = await products.json();
       sortData(data)
+      console.log(data)
 
 
-      setTypes(data.type);
-    
+      setTypes(data[0].type);
+      console.log(data[0].type)
+
     };
     
     function sortData(data) {
