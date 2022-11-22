@@ -22,7 +22,7 @@ export default function Products() {
       sortData(data)
       console.log(data)
 
-    for(let i = 1; i < data.length; i++){
+    for(let i = 0; i < data.length; i++){
       setTypes(data[i].type);
       console.log(data[i].type)      
     }

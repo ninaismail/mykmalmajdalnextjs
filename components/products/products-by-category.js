@@ -23,8 +23,10 @@ export default function ProductsByCategory(props) {
       const data = await products.json();
       sortData(data)
 
-      setTypes(data.type);
-      console.log(data.type)
+      for(let i = 0; i < data.length; i++){
+        setTypes(data[i].type);
+        console.log(data[i].type)      
+      }
     };
     
     function sortData(data) {
