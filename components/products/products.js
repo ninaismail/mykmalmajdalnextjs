@@ -9,7 +9,7 @@ import Type from "../types/type"
 
 export default function Products() {
     const [types, setTypes] = useState([]);
-   
+     console.log(types)
     const { addItem } = useCart();
     
     const [sortPrice, setPriceOrder] = useState("default");
@@ -24,7 +24,7 @@ export default function Products() {
 
 
       setTypes(data.type);
-      console.log(data.type)
+    
     };
     
     function sortData(data) {
