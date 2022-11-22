@@ -12,7 +12,6 @@ import ProductsCategoriesNav from '../../components/products/products-categories
 
 export default function ProductsPage(props) {
   const categories = props.allcategories;
-  const types = props.alltypes;
   const products = props.allproducts;
   
     return (
@@ -38,7 +37,6 @@ export default function ProductsPage(props) {
   }
   export async function getStaticProps(context) {
     const categories = await axios.get("http://127.0.0.1:8000/api/categories");
-    const types = await axios.get("http://127.0.0.1:8000/api/types");
     const products = await axios.get("http://127.0.0.1:8000/api/products");
     return {
       props: {

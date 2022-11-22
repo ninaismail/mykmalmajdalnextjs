@@ -34,7 +34,6 @@ export default function ProductsPage(props) {
   }
   export async function getStaticProps(context) {
     const categories = await axios.get("http://127.0.0.1:8000/api/categories");
-    const types = await axios.get("http://127.0.0.1:8000/api/types");
 
     const categoryId = context.params.categoryid;
     
@@ -42,7 +41,6 @@ export default function ProductsPage(props) {
     return {
       props: {
         allcategories: categories.data,
-        alltypes: types.data,
         selectedCategory: category.data
       },
       revalidate: 30
