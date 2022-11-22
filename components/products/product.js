@@ -56,7 +56,6 @@ onChange={(e) => {
 </select>
 <BiChevronDown color="white" size="30px" className='absolute left-2 top-2 z-100'/>
 </div>
-<div className="my-10 bg-white border border-black shadow-xl px-6 py-4 relative z-1 w-3/4 h-auto mx-auto rounded-lg">
 <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2
 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 justify-center items-center">
 {Array.isArray(data)&&data.map((product) => (
@@ -78,7 +77,7 @@ lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 justify-center items-center">
     </button>
     </div>
 ))}
-</div></div>
+</div>
     </>
     )
   }

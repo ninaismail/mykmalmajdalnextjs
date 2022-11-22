@@ -28,9 +28,10 @@ export default function ProductsPage(props) {
 
       <ProductsCategoriesNav categories={categories}/>
          
+      <div className="my-10 bg-white border border-black shadow-xl px-6 py-4 relative z-1 w-3/4 h-auto mx-auto rounded-lg">
       <TypesNav types={types}/>
       <Products categoryId={category.id} />
-
+      </div>
       <Branches/>
       <Footer />
       </div>
