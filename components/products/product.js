@@ -1,16 +1,65 @@
 import { useCart } from "react-use-cart";
+import { useState, useEffect } from 'react';
 
 import {BiShoppingBag} from 'react-icons/bi'
 import Image from 'next/image'
 import Link from "next/link"
-    
+import {BiChevronDown} from 'react-icons/bi'
+
 export default function Product(props) {
     const { products } = props;
     const { addItem } = useCart();
+    
+    const [sortPrice, setPriceOrder] = useState("default");
+    const [data, setData] = useState([]);
+     useEffect(() => {
+      fetchData();
+    }, [sortPrice]);
+     const fetchData = async () => {
+      const products =  await fetch("http://127.0.0.1:8000/api/products");
+    
+      const data = await products.json();
+      console.log(data)
+      sortData(data)
+    };
+    
+    function sortData(data) {
+      let sortedData;
+      if (sortPrice === 'descending') {
+        sortedData = [...data].sort((a, b) => {
+          return b.price - a.price;
+        });
+        console.log("high to low")
+        console.log(sortedData)
+      } else if (sortPrice === 'ascending') {
+        sortedData = [...data].sort((a, b) => {
+          return a.price - b.price;
+        });
+        console.log("low to high")
+        console.log(sortedData) 
+      } else {
+        return data;
+      }
+      setData(sortedData);
+    }    
     return (
+        <>
+<div className="shadow-xl md:w-1/6 sm:w-1/3 w-1/3 top-0 relative right-0 mx-6" style={{"margin-top": "-180px"}}>
+<select id="pricefilter" className="bg-orange-500 text-white border border-orange-500
+rounded-lg block w-full px-6 py-3" defaultValue='default' value={sortPrice}
+onChange={(e) => {
+  setPriceOrder(e.target.value);
+}}>
+  <option className="bg-white text-black" value="default">رتّب بحسب:</option>
+  <option className="bg-white text-black"value="descending">السعر من الأعلى للأدنى</option>
+  <option className="bg-white text-black"value="ascending">السعر من الأدنى للأعلى</option>
+</select>
+<BiChevronDown color="white" size="30px" className='absolute left-2 top-2 z-100'/>
+</div>
+<div className="my-10 bg-white border border-black shadow-xl px-6 py-4 relative z-1 w-3/4 h-auto mx-auto rounded-lg">
 <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2
 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 justify-center items-center">
-{Array.isArray(products)&&products.map((product) => (
+{Array.isArray(data)&&data.map((product) => (
     <div key={product.id} className="text-center">
     <Link href={`/products/${product.id}`} >
         <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
@@ -29,6 +78,7 @@ lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 justify-center items-center">
     </button>
     </div>
 ))}
-</div>
+</div></div>
+    </>
     )
   }

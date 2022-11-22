@@ -1,5 +1,4 @@
 import axios from '../../lib/axios';
-import { useState, useEffect } from 'react';
 
 import Head from 'next/head'
 import Header from '../../components/layout/main-header'
@@ -8,7 +7,6 @@ import ProductsHeroSecion from '../../components/products/products-hero-section'
 import LangSwitch from '../../components/layout/langswitch'
 
 import Product from '../../components/products/product';
-import ProductsFilters from '../../components/products/products-filters'
 import Branches from '../../components/branches'
 import ProductsCategoriesNav from '../../components/products/products-categories-nav'
 import TypesNav from '../../components/types/types-nav'
@@ -18,28 +16,6 @@ export default function ProductsPage(props) {
   const types = props.alltypes;
   const products = props.allproducts;
   
-
-  // using data from parameter instead of state
-function sortData(data) {
-  let sortedData;
-  if (selectedpriceorder === 'descending') {
-    sortedData = [...data].sort((a, b) => {
-      return b.price - a.price;
-    });
-    console.log("high to low")
-    console.log(sortedData)
-  } else if (selectedpriceorder === 'ascending') {
-    sortedData = [...data].sort((a, b) => {
-      return a.price - b.price;
-    });
-    console.log("low to high")
-    console.log(sortedData) 
-  } else {
-    return data;
-  }
-  setData(sortedData);
-}
-const sortedproducts = sortData(products);
     return (
       <div>
       <Head>
@@ -53,13 +29,12 @@ const sortedproducts = sortData(products);
 
       <ProductsCategoriesNav categories={categories}/>
          
-      <div className='mx-6'>
-      <ProductsFilters/>
+     
       <div className="my-10 bg-white border border-black shadow-xl px-6 py-4 relative z-1 w-3/4 h-auto mx-auto rounded-lg">
       <TypesNav types={types}/>
-      <Product products={sortedproducts} />
+      <Product products={products} />
       </div>
-      </div>      
+   
       <Branches/>
       <Footer />
       </div>
@@ -69,7 +44,6 @@ const sortedproducts = sortData(products);
     const categories = await axios.get("http://127.0.0.1:8000/api/categories");
     const types = await axios.get("http://127.0.0.1:8000/api/types");
     const products = await axios.get("http://127.0.0.1:8000/api/products");
-
     return {
       props: {
         allcategories: categories.data,
