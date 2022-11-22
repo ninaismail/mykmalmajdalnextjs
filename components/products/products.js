@@ -22,9 +22,10 @@ export default function Products() {
       sortData(data)
       console.log(data)
 
-
-      setTypes(data[0].type);
-      console.log(data[0].type)
+    for(let i = 1; i < data.length; i++){
+      setTypes(data[i].type);
+      console.log(data[i].type)      
+    }
 
     };
     
