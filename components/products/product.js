@@ -40,16 +40,12 @@ export default function Product(props) {
         sortedData = [...data].sort((a, b) => {
           return b.price - a.price;
         });
-        console.log("high to low")
-        console.log(sortedData)
       } else if (sortPrice === 'ascending') {
         sortedData = [...data].sort((a, b) => {
           return a.price - b.price;
         });
-        console.log("low to high")
-        console.log(sortedData) 
-      } else {
-        return data;
+      } else if (sortPrice === 'default') {
+        sortedData = data;
       }
       setData(sortedData);
     }    
@@ -62,8 +58,8 @@ onChange={(e) => {
   setPriceOrder(e.target.value);
 }}>
   <option className="bg-white text-black" value="default">رتّب بحسب:</option>
-  <option className="bg-white text-black"value="descending">السعر من الأعلى للأدنى</option>
-  <option className="bg-white text-black"value="ascending">السعر من الأدنى للأعلى</option>
+  <option className="bg-white text-black" value="descending">السعر من الأعلى للأدنى</option>
+  <option className="bg-white text-black" value="ascending">السعر من الأدنى للأعلى</option>
 </select>
 <BiChevronDown color="white" size="30px" className='absolute left-2 top-2 z-100'/>
 </div>

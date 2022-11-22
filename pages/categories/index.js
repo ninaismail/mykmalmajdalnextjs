@@ -41,7 +41,6 @@ export default function ProductsPage(props) {
     return {
       props: {
         allcategories: categories.data,
-        alltypes: types.data,
         allproducts: products.data,
       },
       revalidate: 30
