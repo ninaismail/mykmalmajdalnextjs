@@ -27,8 +27,8 @@ function CartPage(props) {
       <p>لا يوجد لديك منتجات في السلة.</p>
       </div>
     } else (
-      content = <div class="shadow-xl " style={{"margin-top": "-200px"}}>
-      <div class="py-6 px-4 sm:px-6">
+      content = <div class="mx-6 shadow-xl " style={{"margin-top": "-200px"}}>
+      <div class=" py-6 px-4 sm:px-6">
           <h1 class="text-lg font-bold">منتجاتك</h1>
           <ul class="-my-6 divide-y divide-gray-200">
             {items.map((item) => (

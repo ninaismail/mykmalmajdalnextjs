@@ -7,18 +7,10 @@ import Link from "next/link"
 import {BiChevronDown} from 'react-icons/bi'
 import Type from "../types/type"
 
-export default function Product(props) {
+export default function ProductsByCategory(props) {
     const [types, setTypes] = useState([]);
+    const { categoryId } = props;
 
-    useEffect(() => {
-        fetch(`http://127.0.0.1:8000/api/types`)
-          .then((response) => response.json())
-          .then((data) => {
-            setTypes(data);
-            console.log(data)
-          });
-    },[]);
-  
     const { addItem } = useCart();
     
     const [sortPrice, setPriceOrder] = useState("default");
@@ -27,11 +19,13 @@ export default function Product(props) {
       fetchData();
     }, [sortPrice]);
      const fetchData = async () => {
-      const products =  await fetch("http://127.0.0.1:8000/api/products");
-    
+      const products =  await fetch(`http://127.0.0.1:8000/api/categories/${categoryId}/product`);
       const data = await products.json();
-      console.log(data)
       sortData(data)
+
+      const types= await fetch(`http://127.0.0.1:8000/api/types`);
+      const typesdata = await types.json();
+      setTypes(typesdata);
     };
     
     function sortData(data) {
@@ -48,7 +42,7 @@ export default function Product(props) {
         sortedData = data;
       }
       setData(sortedData);
-    }    
+    }
     return (
         <>
 <div className="shadow-xl md:w-1/6 sm:w-1/3 w-1/3 top-0 relative right-0 mx-6" style={{"margin-top": "-180px"}}>

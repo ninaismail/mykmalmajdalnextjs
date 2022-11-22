@@ -6,7 +6,7 @@ import Footer from '../../components/layout/footer'
 import ProductsHeroSecion from '../../components/products/products-hero-section'
 import LangSwitch from '../../components/layout/langswitch'
 
-import Products from '../../components/products/products';
+import ProductsBtCategory from '../../components/products/products-by-category';
 import Branches from '../../components/branches'
 import ProductsCategoriesNav from '../../components/products/products-categories-nav'
 
@@ -26,7 +26,7 @@ export default function ProductsPage(props) {
 
       <ProductsCategoriesNav categories={categories}/>
          
-      <Products categoryId={category.id} />
+      <ProductsBtCategory categoryId={category.id} />
       <Branches/>
       <Footer />
       </div>
