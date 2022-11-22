@@ -22,9 +22,9 @@ export default function Products() {
       const data = await products.json();
       sortData(data)
 
-      const types= await fetch(`http://127.0.0.1:8000/api/types`);
-      const typesdata = await types.json();
-      setTypes(typesdata);
+
+      setTypes(data.type);
+      console.log(data.type)
     };
     
     function sortData(data) {
