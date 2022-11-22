@@ -5,9 +5,20 @@ import {BiShoppingBag} from 'react-icons/bi'
 import Image from 'next/image'
 import Link from "next/link"
 import {BiChevronDown} from 'react-icons/bi'
+import Type from "../types/type"
 
 export default function Product(props) {
-    const { products } = props;
+    const [types, setTypes] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://127.0.0.1:8000/api/types`)
+          .then((response) => response.json())
+          .then((data) => {
+            setTypes(data);
+            console.log(data)
+          });
+    },[]);
+  
     const { addItem } = useCart();
     
     const [sortPrice, setPriceOrder] = useState("default");
@@ -56,6 +67,17 @@ onChange={(e) => {
 </select>
 <BiChevronDown color="white" size="30px" className='absolute left-2 top-2 z-100'/>
 </div>
+<div className="my-10 bg-white border border-black shadow-xl px-6 py-4 relative z-1 w-3/4 h-auto mx-auto rounded-lg">
+<div dir="rtl"className="relative z-100 mx-auto mb-4 flex flex-wrap justify-between items-center">
+{Array.isArray(types)&&types.map((type) => (
+ <Type 
+ key={type.id}
+ id={type.id}
+ name={type.name}
+ href={type.href}
+ />
+))} 
+</div>
 <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2
 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 justify-center items-center">
 {Array.isArray(data)&&data.map((product) => (
@@ -77,7 +99,7 @@ lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 justify-center items-center">
     </button>
     </div>
 ))}
-</div>
+</div></div>
     </>
     )
   }

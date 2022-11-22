@@ -9,12 +9,10 @@ import LangSwitch from '../../components/layout/langswitch'
 import Products from '../../components/products/products';
 import Branches from '../../components/branches'
 import ProductsCategoriesNav from '../../components/products/products-categories-nav'
-import TypesNav from '../../components/types/types-nav'
 
 export default function ProductsPage(props) {
   const category = props.selectedCategory; 
   const categories = props.allcategories;
-  const types = props.alltypes;
     return (
       <div>
       <Head>
@@ -28,10 +26,7 @@ export default function ProductsPage(props) {
 
       <ProductsCategoriesNav categories={categories}/>
          
-      <div className="my-10 bg-white border border-black shadow-xl px-6 py-4 relative z-1 w-3/4 h-auto mx-auto rounded-lg">
-      <TypesNav types={types}/>
       <Products categoryId={category.id} />
-      </div>
       <Branches/>
       <Footer />
       </div>

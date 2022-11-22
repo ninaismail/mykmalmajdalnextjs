@@ -17,7 +17,7 @@ function Products(props) {
   },[categoryId]);
 
   return ( 
-      <Product products={products} />
+      <Product products={products}/>
   );
 }
 
