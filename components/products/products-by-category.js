@@ -8,7 +8,6 @@ import {BiChevronDown} from 'react-icons/bi'
 import Type from "../types/type"
 
 export default function ProductsByCategory(props) {
-    const [types, setTypes] = useState([]);
     const { categoryId } = props;
 
     const { addItem } = useCart();
@@ -23,10 +22,6 @@ export default function ProductsByCategory(props) {
       const data = await products.json();
       sortData(data)
 
-      for(let i = 0; i < data.length; i++){
-        setTypes(data[i].type);
-        console.log(data[i].type)      
-      }
     };
     
     function sortData(data) {
@@ -60,12 +55,12 @@ onChange={(e) => {
 </div>
 <div className="my-10 bg-white border border-black shadow-xl px-6 py-4 relative z-1 w-3/4 h-auto mx-auto rounded-lg">
 <div dir="rtl"className="relative z-100 mx-auto mb-4 flex flex-wrap justify-between items-center">
-{Array.isArray(types)&&types.map((type) => (
+{Array.isArray(data)&&data.map((type, i) => (
  <Type 
- key={type.id}
- id={type.id}
- name={type.name}
- href={type.href}
+ key={data[i].type.id}
+ id={data[i].type.id}
+ name={data[i].type.name}
+ href={data[i].type.href}
  />
 ))} 
 </div>
