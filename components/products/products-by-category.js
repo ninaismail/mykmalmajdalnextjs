@@ -14,6 +14,8 @@ export default function ProductsByCategory(props) {
     
     const [sortPrice, setPriceOrder] = useState("default");
     const [data, setData] = useState([]);
+    const [uniquetypes, setuniqueTypes] = useState([]);
+
      useEffect(() => {
       fetchData();
     }, [sortPrice]);
@@ -21,9 +23,23 @@ export default function ProductsByCategory(props) {
       const products =  await fetch(`http://127.0.0.1:8000/api/categories/${categoryId}/product`);
       const data = await products.json();
       sortData(data)
+      uniqueTypes(data)
 
     };
+    function uniqueTypes(data){
+      let thetypes;
+      let uniques = [];
     
+       thetypes = Array.from(new Set([...data].map(a => a.type_id)))
+     .map(type_id => {
+       return [...data].find(a => a.type_id === type_id)
+     })
+      uniques = [...new Set(thetypes)];
+      console.log(uniques)
+      console.log(uniques[0])
+    
+      setuniqueTypes(uniques)
+    }
     function sortData(data) {
       let sortedData;
       if (sortPrice === 'descending') {
@@ -55,12 +71,12 @@ onChange={(e) => {
 </div>
 <div className="my-10 bg-white border border-black shadow-xl px-6 py-4 relative z-1 w-3/4 h-auto mx-auto rounded-lg">
 <div dir="rtl"className="relative z-100 mx-auto mb-4 flex flex-wrap justify-between items-center">
-{Array.isArray(data)&&data.map((type, i) => (
+{Array.isArray(uniquetypes)&&uniquetypes.map((uniquetype) => (
  <Type 
- key={data[i].type.id}
- id={data[i].type.id}
- name={data[i].type.name}
- href={data[i].type.href}
+ key={uniquetype.type.id}
+ id={uniquetype.type.id}
+ name={uniquetype.type.name}
+ href={uniquetype.type.href}
  />
 ))} 
 </div>
