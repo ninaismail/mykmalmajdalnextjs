@@ -15,6 +15,7 @@ export default function ProductsByCategory(props) {
     const [sortPrice, setPriceOrder] = useState("default");
     const [data, setData] = useState([]);
     const [uniquetypes, setuniqueTypes] = useState([]);
+    const exploreLink = `/categories`;  
 
      useEffect(() => {
       fetchData();
@@ -71,6 +72,9 @@ onChange={(e) => {
 </div>
 <div className="my-10 bg-white border border-black shadow-xl px-6 py-4 relative z-1 w-3/4 h-auto mx-auto rounded-lg">
 <div dir="rtl"className="relative z-100 mx-auto mb-4 flex flex-wrap justify-between items-center">
+<Link href={exploreLink}>
+  <h3 className="font-Roboto font-bold text-center hover:text-orange-500">جميع الفئات</h3>
+</Link>
 {Array.isArray(uniquetypes)&&uniquetypes.map((uniquetype) => (
  <Type 
  key={uniquetype.type.id}
