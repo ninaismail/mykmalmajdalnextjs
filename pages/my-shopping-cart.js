@@ -1,13 +1,12 @@
-import axios from '../../lib/axios';
+import axios from '../lib/axios';
 import Image from "next/image";
-import { useEffect, useState } from 'react';
 
 import Head from 'next/head';
-import Header from '../../components/layout/main-header'
-import Footer from '../../components/layout/footer'
-import ProductsHeroSecion from '../../components/products/products-hero-section'
-import ProductsCategoriesNav from '../../components/products/products-categories-nav'
-import LangSwitch from '../../components/layout/langswitch'
+import Header from '../components/layout/main-header'
+import Footer from '../components/layout/footer'
+import ProductsHeroSecion from '../components/products/products-hero-section'
+import ProductsCategoriesNav from '../components/products/products-categories-nav'
+import LangSwitch from '../components/layout/langswitch'
 
 import { useCart } from "react-use-cart";
 
@@ -27,14 +26,14 @@ function CartPage(props) {
       <p>لا يوجد لديك منتجات في السلة.</p>
       </div>
     } else (
-      content = <div class="mx-6 shadow-xl " style={{"margin-top": "-200px"}}>
-      <div class=" py-6 px-4 sm:px-6">
-          <h1 class="text-lg font-bold">منتجاتك</h1>
-          <ul class="-my-6 divide-y divide-gray-200">
+      content = <div className="mx-6 shadow-xl" style={{"margin-top": "-200px"}}>
+      <div className=" py-6 px-4 sm:px-6">
+          <h1 className="text-lg font-bold">منتجاتك</h1>
+          <ul className="-my-6 divide-y divide-gray-200">
             {items.map((item) => (
-            <li class="w-full flex flex-wrap md:flex-nowrap md:items-start items-center justify-between">
-              <div class="md:w-1/3 w-1/2 flex items-start justify-start">
-                <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border 
+            <li className="w-full flex flex-wrap md:flex-nowrap md:items-start items-center justify-between">
+              <div className="md:w-1/3 w-1/2 flex items-start justify-start">
+                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border 
                 border-gray-200">
                 <Image width="885" height="891"
                     src={item.image}
@@ -44,46 +43,46 @@ function CartPage(props) {
                 </div>
                 <h3 className="mt-2 text-xl font-bold">{item.title}</h3>
               </div>
-              <div class="md:w-1/3 w-1/2 flex flex-col items-end">
+              <div className="md:w-1/3 w-1/2 flex flex-col items-end">
                   <p className="text-lg font-medium text-gray-900">{item.price}</p>
                   <div className='md:w-1/5 w-1/3 flex justify-ceendnter items-center 
                   border border-gray-500'>
-                    <button class="w-1/3 h-full font-medium bg-orange-500 hover:bg-orange-700 text-white"
+                    <button className="w-1/3 h-full font-medium bg-orange-500 hover:bg-orange-700 text-white"
                       onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
                     >
                       -
                     </button>
-                    <p class="w-1/3 h-full text-center m-auto font-medium">{item.quantity}</p>
-                    <button class="w-1/3 h-full font-medium bg-orange-500 hover:bg-orange-700 text-white"
+                    <p className="w-1/3 h-full text-center m-auto font-medium">{item.quantity}</p>
+                    <button className="w-1/3 h-full font-medium bg-orange-500 hover:bg-orange-700 text-white"
                       onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
                     >
                       +
                     </button>
                 </div>
               </div>
-              <div class="md:w-1/3 w-full text-end">
-                    <button type="button" class="font-medium text-orange-700 hover:text-orange-500"
+              <div className="md:w-1/3 w-full text-end">
+                    <button type="button" className="font-medium text-orange-700 hover:text-orange-500"
                     onClick={() => removeItem(item.id)}>إزالة</button>
               </div>
             </li>
             ))}
             </ul>
       </div>
-      <div class="border-t border-gray-200 py-6 px-4 sm:px-6">
-        <div class="flex justify-between text-base font-medium text-gray-900">
+      <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
+        <div className="flex justify-between text-base font-medium text-gray-900">
         <p>السعر الإجمالي:</p>
         <p>{cartTotal}</p>
         </div>
-        <p class="mt-0.5 text-sm text-gray-500">الشحن والضرائب تحسب عند الخروج.</p>
-        <div class="mt-6">
-        <a href="#" class="flex items-center justify-center rounded-md border border-transparent 
+        <p className="mt-0.5 text-sm text-gray-500">الشحن والضرائب تحسب عند الخروج.</p>
+        <div className="mt-6">
+        <a href="#" className="flex items-center justify-center rounded-md border border-transparent 
         bg-orange-500 px-6 py-3 text-base font-medium 
         text-white shadow-sm hover:bg-orange-700">الشراء</a>
         </div>
-        <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
+        <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
         <p>
-        <span class="font-medium">أو&nbsp; </span>
-            <button type="button" class="font-medium text-orange-500 hover:text-orange-700">
+        <span className="font-medium">أو&nbsp; </span>
+            <button type="button" className="font-medium text-orange-500 hover:text-orange-700">
             تابع التسوّق
             <span aria-hidden="true"> &larr;</span>
             </button>
@@ -104,7 +103,7 @@ function CartPage(props) {
       </Head>
       <LangSwitch />
       <Header />
-      <ProductsHeroSecion />
+      <ProductsHeroSecion image="/productsbg.jpg"/>
 
       <ProductsCategoriesNav categories={categories}/>
       {content}

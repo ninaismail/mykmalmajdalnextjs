@@ -22,7 +22,7 @@ export default function ProductsPage(props) {
       </Head>
       <LangSwitch />
       <Header />
-      <ProductsHeroSecion />
+      <ProductsHeroSecion image="/productsbg.jpg"title="الأصناف"/>
 
       <ProductsCategoriesNav categories={categories}/>
          
