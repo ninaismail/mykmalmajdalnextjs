@@ -17,7 +17,7 @@ function Login() {
                     className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none 
                     focus:ring-1 focus:ring-orange-700"/>
             </div>
-            <div className="flex items-center mb-4">
+            <div className="flex items-center mt-4">
                 <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-white bg-orange-500 border-gray-300 
                 focus:ring-orange-700 focus:ring-2"/>
                 <label for="default-checkbox" className="ml-2 text-sm font-medium">تذكرني</label>

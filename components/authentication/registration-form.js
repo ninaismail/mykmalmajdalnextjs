@@ -35,9 +35,9 @@
                         className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none 
                         focus:ring-1 focus:ring-orange-700"/>
                 </div>
-                <p className="font-Roboto">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our
+                <p className="font-Roboto mt-4">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our
                 <span className="text-sm text-orange-500 hover:underline">سياسة الخصوصية.</span></p>
-                    <button className="px-6 py-2 mt-4 text-white bg-orange-500 rounded-lg hover:bg-orange-700">تسجيل جديد للشركات و الأفراد</button>
+                <button className="px-6 py-2 mt-4 text-white bg-orange-500 rounded-lg hover:bg-orange-700">تسجيل جديد للشركات و الأفراد</button>
             </div>
         </form>
     </div>

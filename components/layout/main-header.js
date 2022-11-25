@@ -13,7 +13,7 @@ const MENU_LIST = [
   { text: "الأهداف", href: "#about" },
   { text: "إبداعات منتجاتنا", href: "#product" },
   { text: "تواصل معنا", href: "#contact" },
-  { text: "حسابي", href: "/my-account" },
+  { text: "حسابي", href: "/login" },
 
 ];
 const Navbar = () => {
@@ -30,9 +30,9 @@ const Navbar = () => {
       <Image src="/km-logo.png" width="121" height="61" alt="Food Options Logo" />
     </Link>
    <div className={`font-Roboto ${navActive ? "active" : ""} nav__menu-list `}>
-   <button onClick={'/my-account'}className="font-Roboto block p-3 hover:text-orange-500
+   <Link href={'/my-account'}className="font-Roboto block p-3 hover:text-orange-500
     bg-gray-500 text-white border rounded-full border-black-500 
-    focus:ring-black-500 focus:border-black-500 opacity-75">تسجيل الدخول للبيع بالجملة</button>
+    focus:ring-black-500 focus:border-black-500 opacity-75">تسجيل الدخول للبيع بالجملة</Link>
         {MENU_LIST.map((menu, idx) => (
         <div 
           onClick={() => {
