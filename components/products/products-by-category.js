@@ -29,10 +29,10 @@ export default function ProductsByCategory(props) {
       let thetypes;
       let uniques = [];
     
-       thetypes = Array.from(new Set([...data].map(a => a.type_id)))
+       thetypes = Array.from(new Set([...data].map(a => a.type_id).sort((a, b) => b.type_id - a.type_id)))
      .map(type_id => {
        return [...data].find(a => a.type_id === type_id)
-     })
+      }).sort((a, b) => a.type_id - b.type_id)
       uniques = [...new Set(thetypes)];
       console.log(uniques)
       console.log(uniques[0])

@@ -27,10 +27,10 @@ function uniqueTypes(data){
   let thetypes;
   let uniques = [];
 
-   thetypes = Array.from(new Set([...data].map(a => a.type_id)))
- .map(type_id => {
+  thetypes = Array.from(new Set([...data].map(a => a.type_id)))
+  .map(type_id => {
    return [...data].find(a => a.type_id === type_id)
- })
+ }).sort((a, b) => a.type_id - b.type_id)
   uniques = [...new Set(thetypes)];
 
   setuniqueTypes(uniques)
