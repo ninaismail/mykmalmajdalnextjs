@@ -23,7 +23,7 @@ export default function ProductsByCategory(props) {
       const data = await products.json();
       sortData(data)
       uniqueTypes(data)
-
+      DatabyType(data)
     };
     function uniqueTypes(data){
       let thetypes;
