@@ -5,7 +5,6 @@ import {BiShoppingBag} from 'react-icons/bi'
 import Image from 'next/image'
 import Link from "next/link"
 import {BiChevronDown} from 'react-icons/bi'
-import Type from "../types/type"
 
 export default function Products() {
     const { addItem } = useCart();
@@ -13,8 +12,6 @@ export default function Products() {
     const [sortPrice, setPriceOrder] = useState("default");
     const [data, setData] = useState([]);
     const [uniquetypes, setuniqueTypes] = useState([]);
-    const exploreLink = `/categories`;  
-
 
     useEffect(() => {
       fetchData();

@@ -5,17 +5,15 @@ import {BiShoppingBag} from 'react-icons/bi'
 import Image from 'next/image'
 import Link from "next/link"
 import {BiChevronDown} from 'react-icons/bi'
-import Type from "../types/type"
 
 export default function ProductsByCategory(props) {
     const { categoryId } = props;
 
     const { addItem } = useCart();
-    
+    const [type, setType] = useState("جميع الفئات");
     const [sortPrice, setPriceOrder] = useState("default");
     const [data, setData] = useState([]);
     const [uniquetypes, setuniqueTypes] = useState([]);
-    const exploreLink = `/categories`;  
 
      useEffect(() => {
       fetchData();
@@ -56,6 +54,39 @@ export default function ProductsByCategory(props) {
       }
       setData(sortedData);
     }
+    function DatabyType(data) {
+      let DataByType;
+      let uniques = [];
+
+       if(type === '1 كغ'){
+        DataByType = [...data].map(a => a.type_id)
+        .map(type_id => {
+          return [...data].find(a => a.type_id === 1)
+        })
+      }else if(type === '5 كغ'){
+        DataByType = [...data].map(a => a.type_id)
+        .map(type_id => {
+          return [...data].find(a => a.type_id === 2)
+        })      
+      }else if(type === 'شوكولاته'){
+        DataByType = [...data].map(a => a.type_id)
+        .map(type_id => {
+          return [...data].find(a => a.type_id === 4)
+        })
+      }else if(type === 'سابوري'){
+        DataByType = [...data].map(a => a.type_id)
+        .map(type_id => {
+          return [...data].find(a => a.type_id === 3)
+        })
+      }else if(type === 'جميع الفئات'){
+          return DataByType = data
+      }
+      uniques = [...new Set(DataByType)];
+
+      setData(uniques);
+      console.log(uniques)
+
+    }
     return (
         <>
 <div className="shadow-xl md:w-1/6 sm:w-1/3 w-1/3 top-0 relative right-0 mx-6" style={{"margin-top": "-180px"}}>
@@ -72,17 +103,16 @@ onChange={(e) => {
 </div>
 <div className="my-10 bg-white border border-black shadow-xl px-6 py-4 relative z-1 w-3/4 h-auto mx-auto rounded-lg">
 <div dir="rtl"className="relative z-100 mx-auto mb-4 flex flex-wrap justify-between items-center">
-<Link href={exploreLink}>
-  <h3 className="font-Roboto font-bold text-center hover:text-orange-500">جميع الفئات</h3>
-</Link>
-{Array.isArray(uniquetypes)&&uniquetypes.map((uniquetype) => (
- <Type 
- key={uniquetype.type.id}
- id={uniquetype.type.id}
- name={uniquetype.type.name}
- href={uniquetype.type.href}
- />
-))} 
+<input type='submit'className="cursor-pointer font-Roboto font-bold text-center hover:text-orange-500" 
+  value='جميع الفئات'
+  onClick={(e) => {
+    setType(e.target.value);}}/>
+{Array.isArray(uniquetypes)&&uniquetypes.map((uniquetype) => ( 
+  <input type='submit'className="cursor-pointer font-Roboto font-bold text-center hover:text-orange-500" 
+  key={uniquetype.type.id} value={uniquetype.type.name}
+  onClick={(e) => {
+    setType(e.target.value);}}/>
+))}  
 </div>
 <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2
 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 justify-center items-center">
