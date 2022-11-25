@@ -2,7 +2,7 @@ import Link from "next/link"
 
  function Type(props) {
     const { id, name,href } = props;
-    const exploreLink = `/types/${id}`;  
+    const exploreLink = `/categories-${href}`;  
   return (
 <>
 <Link href={exploreLink}>
