@@ -1,5 +1,4 @@
-
-  function Register() {
+function Register() {
     return (
 <div dir='rtl' className="h-full md:w-1/2 w-full px-8 py-6 mt-4">
         <h3 className="text-right text-2xl font-Roboto font-bold">تسجيل جديد للشركات و الأفراد</h3>
@@ -40,7 +39,7 @@
                 <button className="px-6 py-2 mt-4 text-white bg-orange-500 rounded-lg hover:bg-orange-700">تسجيل جديد للشركات و الأفراد</button>
             </div>
         </form>
-    </div>
+</div>
     );
   }
   

@@ -1,14 +1,12 @@
-
 import Head from 'next/head'
 import Header from '../components/layout/main-header'
 import Footer from '../components/layout/footer'
 import ProductsHeroSecion from '../components/products/products-hero-section'
 import LangSwitch from '../components/layout/langswitch'
-import AuthForms from '../components/authentication/auth-forms';
+import AuthForm from '../components/authentication/auth-forms';
 
 
 export default function LoginorRegister() {
-  
     return (
       <div>
       <Head>
@@ -19,7 +17,7 @@ export default function LoginorRegister() {
       <LangSwitch />
       <Header />
       <ProductsHeroSecion image="/accountbg.jpg"/>
-      <AuthForms/>
+      <AuthForm />
       <Footer />
       </div>
     )
