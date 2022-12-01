@@ -117,9 +117,11 @@ function CheckoutPage(props) {
                     <h2>ضريبة القيمة المضافة</h2><p>10.50</p></div>
                 <div class="flex items-center justify-between w-full py-4 font-Roboto font-bold border-b border-gray-300">
                     <h2>الإجمالي</h2><p>{cartTotal + 10.50}</p></div>
-                <div class="w-full py-4 font-Roboto font-bold">
+                <div class="w-full py-4 font-Roboto font-bold border-b border-gray-300">
                     <h2>الدفع نقدًا عند الإستلام</h2>
                     <p class="ml-2">الدفع عند التسليم مباشرة.</p></div>
+                    <p className="font-Roboto mt-4">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our
+                    &nbsp; <span className="text-sm text-orange-500 hover:underline">سياسة الخصوصية.</span></p>
                 <div class="mt-4">
                     <Link href="/checkout" className="flex items-center justify-center rounded-md border border-transparent 
                      bg-orange-500 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-orange-700">
