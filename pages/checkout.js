@@ -1,5 +1,4 @@
-import axios from '../lib/axios';
-import Image from "next/image";
+import Link from "next/link";
 
 import Head from 'next/head';
 import Header from '../components/layout/main-header'
@@ -30,8 +29,8 @@ function CheckoutPage(props) {
       <ProductsHeroSecion image="/cartbg.jpg" title="نسعد في
 خدمتك دائماً..."/>
 
-<div class="container p-12 mx-auto">
-    <div class="flex flex-col w-full mx-auto md:flex-row">
+<div className="mx-6 shadow-xl" style={{"margin-top": "-100px"}}>
+    <div class="flex flex-col w-full mx-auto md:flex-row py-4 px-6">
         <div class="lg:w-3/5 w-full">
             <h2 class="mb-4 font-bold md:text-xl text-heading">تفاصيل الفاتورة </h2>
             <form class="w-full mx-auto" method="post" action>
@@ -122,14 +121,15 @@ function CheckoutPage(props) {
                     <h2>الدفع نقدًا عند الإستلام</h2>
                     <p class="ml-2">الدفع عند التسليم مباشرة.</p></div>
                 <div class="mt-4">
-                    <button className="px-6 py-2 mt-4 text-white bg-orange-500 rounded-lg hover:bg-orange-700">
+                    <Link href="/checkout" className="flex items-center justify-center rounded-md border border-transparent 
+                     bg-orange-500 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-orange-700">
                     الرجاء متابعة الطلب عبر النقر على زر الواتساب في الصفحة التالية         
-                    </button>
+                    </Link>
                 </div>
-            </div>
+        </div>
     </div>
 </div>
-      <Footer />
+       <Footer />
     </>
     )
 }
