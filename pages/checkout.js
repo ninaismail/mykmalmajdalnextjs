@@ -31,8 +31,8 @@ function CheckoutPage(props) {
 خدمتك دائماً..."/>
 
 <div class="container p-12 mx-auto">
-    <div class="flex flex-col w-full px-0 mx-auto md:flex-row">
-        <div class="flex flex-col md:w-full">
+    <div class="flex flex-col w-full mx-auto md:flex-row">
+        <div class="lg:w-3/5 w-full">
             <h2 class="mb-4 font-bold md:text-xl text-heading">تفاصيل الفاتورة </h2>
             <form class="w-full mx-auto" method="post" action>
             <div class="space-x-0 lg:flex lg:space-x-4">
@@ -100,7 +100,7 @@ function CheckoutPage(props) {
                 </div>
             </form>
         </div>
-        <div class="w-full ml-0 lg:ml-12 lg:w-2/5">
+        <div class="w-full mr-0 lg:mr-12 lg:w-2/5">
             <div class="pt-12 md:pt-0 2xl:ps-4">
                 <h2 class="text-xl font-bold">طلبك </h2>
                 <div class="mt-8 flex justify-between items-center">
