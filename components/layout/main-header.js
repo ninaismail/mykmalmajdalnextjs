@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import React, { useState , useRef} from "react";
@@ -58,7 +57,7 @@ const Navbar = () => {
             required=""/>
         </div>
     </form>
-    <Link href={"/shoppingcart/my-shopping-cart"} type="button" class="inline-flex relative items-center p-3">
+    <Link href={"/my-shopping-cart"} type="button" class="inline-flex relative items-center p-3">
       <BiShoppingBag size="50px"color="orange" className="cursor-pointer"/>
       <div class="inline-flex absolute top-[5px] -right-2 justify-center items-center w-6 h-6 text-xs font-bold text-white bg-red-500 rounded-full">
       {totalItems}

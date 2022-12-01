@@ -13,7 +13,7 @@ import ProductsCategoriesNav from '../../components/products/products-categories
 export default function ProductsPage(props) {
   const categories = props.allcategories;
   const products = props.allproducts;
-  
+  console.log(products)
     return (
       <div>
       <Head>
