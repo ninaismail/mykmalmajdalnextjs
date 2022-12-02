@@ -157,7 +157,7 @@ function CheckoutPage() {
             </div>                        
             {items.map((item) => (      
             <div class="flex justify-between items-center py-4 font-semibold border-b border-gray-300">
-                <div class="flex justify-between items-center"><h2>{item.title}</h2><p>{item.quantity}x</p></div> 
+                <div class="flex justify-between items-center"><h2>{item.title}</h2>&nbsp;&nbsp;<p>{item.quantity}x</p></div> 
                 <div><p>{item.price}</p></div>
             </div> 
             ))}                     

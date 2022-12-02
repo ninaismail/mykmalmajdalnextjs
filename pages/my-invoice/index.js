@@ -30,11 +30,11 @@ function myInvoicePage() {
       <ProductsHeroSecion image="/cartbg.jpg" title="نسعد في خدمتك دائماً..."/>
 
 <div className="mx-auto shadow-xl w-4/5" style={{"margin-top": "-100px"}}>
-    <div class="w-full bg-gray-200 p-4 text-center">
-        <h2 class="text-xl font-bold">To confirm your order, contact us on WhatsApp by clicking on the button below, test1!</h2>
+    <div class="w-full bg-gray-200 p-6 text-center">
+        <h2 class="text-xl font-bold">To confirm your order, contact us on WhatsApp by clicking on the button below {invoice.client_fname}!</h2>
         <p className="font-Roboto mt-4">للتأكيد و ارسال تفاصيل طلبك,الرجاء النقر على الزر أدناه.</p>
-        <button className='bg-orange-500 px-6 py-2 w-full hover:bg-orange-700 rounded-lg 
-        border-orange-500 hover:border-orange-700 text-white'><BsWhatsapp size="20px"color="white" className="inline cursor-pointer mx-auto"/>
+        <button className='bg-orange-500 px-6 py-2 mx-auto hover:bg-orange-700 rounded-lg 
+        border-orange-500 hover:border-orange-700 text-white mt-4'><BsWhatsapp size="20px"color="white" className="inline cursor-pointer mx-auto"/>
         أرسل تفاصيل الطلب
         </button>
     </div>
@@ -65,7 +65,7 @@ function myInvoicePage() {
             </div>                        
             {items.map((item) => (      
             <div class="flex justify-between items-center py-4 font-semibold border-b border-gray-300">
-                <div class="flex justify-between items-center"><h2>{item.title}</h2><p>{item.quantity}x</p></div> 
+                <div class="flex justify-between items-center"><h2>{item.title}</h2>&nbsp;&nbsp;<p>{item.quantity}x</p></div> 
                 <div><p>{item.price}</p></div>
             </div> 
             ))}                     
@@ -74,14 +74,14 @@ function myInvoicePage() {
             <h2>ضريبة القيمة المضافة</h2><p>10.50</p></div>
         <div class="flex items-center justify-between w-full py-4 font-Roboto font-bold border-b border-gray-300">
             <h2>الإجمالي</h2><p>{cartTotal + 10.50}</p></div>
-        <div class="w-full py-4 font-Roboto font-bold border-b border-gray-300">
+        <div class="flex items-center justify-between w-full py-4 font-Roboto font-bold border-b border-gray-300">
             <h2>الدفع نقدًا عند الإستلام</h2>
             <p class="ml-2">الدفع عند التسليم مباشرة.</p></div>
             <p className="font-Roboto mt-4">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our
             &nbsp; <span className="text-sm text-orange-500 hover:underline">سياسة الخصوصية.</span></p>
         <div class="mt-4">
             <input type="submit" value="الرجاء متابعة الطلب عبر النقر على زر الواتساب في الصفحة التالية"
-            className="cursor-pointer flex items-center justify-center rounded-md border border-transparent 
+            className="mx-auto cursor-pointer flex items-center justify-center rounded-md border border-transparent 
             bg-orange-500 px-6 py-3 text-center font-medium text-white shadow-sm hover:bg-orange-700"/>
         </div>
     </div>
