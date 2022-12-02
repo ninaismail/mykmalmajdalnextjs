@@ -30,12 +30,12 @@ function myInvoicePage() {
       <ProductsHeroSecion image="/cartbg.jpg" title="نسعد في خدمتك دائماً..."/>
 
 <div className="mx-auto shadow-xl w-4/5" style={{"margin-top": "-100px"}}>
-    <div class="w-full bg-gray-200 p-4">
+    <div class="w-full bg-gray-200 p-4 text-center">
         <h2 class="text-xl font-bold">To confirm your order, contact us on WhatsApp by clicking on the button below, test1!</h2>
         <p className="font-Roboto mt-4">للتأكيد و ارسال تفاصيل طلبك,الرجاء النقر على الزر أدناه.</p>
         <button className='bg-orange-500 px-6 py-2 w-full hover:bg-orange-700 rounded-lg 
-        border-orange-500 hover:border-orange-700 text-white'>
-        أرسل تفاصيل الطلب<BsWhatsapp size="20px"color="white" className="inline cursor-pointer mx-auto"/>
+        border-orange-500 hover:border-orange-700 text-white'><BsWhatsapp size="20px"color="white" className="inline cursor-pointer mx-auto"/>
+        أرسل تفاصيل الطلب
         </button>
     </div>
     <div class="w-full flex justify-start flex-wrap items-start">
@@ -45,20 +45,20 @@ function myInvoicePage() {
        </div>
        <div className='border-l border-gray-200 p-2'>
         <h2 class="text-xl font-bold">التاريخ:</h2>
-        <p className="font-Roboto mt-4">{invoice.created_date}</p>
+        <p className="font-Roboto mt-4">{invoice.created_at}</p>
        </div>
        <div className='border-l border-gray-200 p-2'>
         <h2 class="text-xl font-bold">الإجمالي:</h2>
         <p className="font-Roboto mt-4">{invoice.grandtotal}</p>
        </div>
-       <div className='border-l border-gray-200 p-2'>
+       <div className='p-2'>
         <h2 class="text-xl font-bold">وسيلة الدفع:</h2>
-        <p className="font-Roboto mt-4">{invoice.payment_methde}</p>
+        <p className="font-Roboto mt-4">{invoice.payment_methode}</p>
        </div>
     </div>
-    <div class="w-full">
+    <div class="w-full px-6 py-4">
         <div class="pt-12 md:pt-0 2xl:ps-4">
-            <h2 class="text-xl font-bold  bg-gray-200 py-4 border border-gray-300">تفاصيل الطلب</h2>
+            <h2 class="text-xl font-bold bg-gray-200 px-2 py-4 border border-gray-300">تفاصيل الطلب</h2>
             <div class="mt-8 flex justify-between items-center py-4 border-b border-gray-300">
                 <h2 class="font-Roboto text-xl font-bold">المنتج</h2>
                 <h2 class="font-Roboto text-xl font-bold">المجموع</h2>
