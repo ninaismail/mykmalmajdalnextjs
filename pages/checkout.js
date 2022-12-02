@@ -1,3 +1,7 @@
+import {useRouter} from 'next/router'
+import { useCart } from "react-use-cart";
+import { useRef,useState } from 'react'
+import axios from '../lib/axios';
 
 import Head from 'next/head';
 import Header from '../components/layout/main-header'
@@ -5,11 +9,10 @@ import Footer from '../components/layout/footer'
 import ProductsHeroSecion from '../components/products/products-hero-section'
 import LangSwitch from '../components/layout/langswitch'
 
-import { useCart } from "react-use-cart";
-import { useRef } from 'react'
-import axios from '../lib/axios';
-
-function CheckoutPage(props) {
+function CheckoutPage() {
+    const router = useRouter()
+    const [route, setRoute] = useState('')
+    console.log(route)
     const fnameRef = useRef()
     const lnameRef = useRef()
     const companyRef = useRef()
@@ -20,7 +23,6 @@ function CheckoutPage(props) {
     const {
     cartTotal,
     items,
-    quantity
   } = useCart();
     const country = "المملكة العربية السعودية";
     const tax = 10.50;
@@ -54,9 +56,15 @@ function CheckoutPage(props) {
             grandtotal:grandtotal
         };
         axios.post('http://localhost:8000/api/invoices', invoice)
-        .then((response) => console.log(response))
+        .then((response) => {console.log(response) 
+            router.push({
+                pathname: "/my-invoice",
+                state: { clickedFromHome: true },
+                query: response.data
+              });
+            })
         .catch((error) => console.log(error));
-    }
+        }
     return (
       <>
     <Head>
@@ -149,7 +157,7 @@ function CheckoutPage(props) {
             </div>                        
             {items.map((item) => (      
             <div class="flex justify-between items-center py-4 font-semibold border-b border-gray-300">
-                <div><h2>{item.title}</h2><p>{quantity}</p></div> 
+                <div class="flex justify-between items-center"><h2>{item.title}</h2><p>{item.quantity}x</p></div> 
                 <div><p>{item.price}</p></div>
             </div> 
             ))}                     
@@ -165,7 +173,7 @@ function CheckoutPage(props) {
                 &nbsp; <span className="text-sm text-orange-500 hover:underline">سياسة الخصوصية.</span></p>
             <div class="mt-4">
                 <input type="submit" value="الرجاء متابعة الطلب عبر النقر على زر الواتساب في الصفحة التالية"
-                className="cursor-pointer flex items-center justify-center rounded-md border border-transparent 
+                className="cursor-pointer w-full rounded-md border border-transparent whitespace-normal	
                 bg-orange-500 px-6 py-3 text-center font-medium text-white shadow-sm hover:bg-orange-700"/>
             </div>
     </div>
