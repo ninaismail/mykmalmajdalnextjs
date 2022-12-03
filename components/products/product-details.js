@@ -6,10 +6,10 @@ export default function ProductDetails(props) {
     const { title, description, image, image2, image3, image4, price, category_id } = props;
     //   const gobacklink = `/categories/${category_id}`; 
     const [mainimage, setMainImage] = useState(0);
-
+// style={{"margin-top": "-180px"}}
   return (
   <div className="my-10 bg-white border border-black shadow-xl px-6 py-4 
-  relative z-1 w-3/4 h-auto mx-auto rounded-lg"style={{"margin-top": "-180px"}}>
+  relative z-1 w-3/4 h-auto mx-auto rounded-lg">
       <div className="md:flex justify-center items-center">
         <div className="md:w-1/2">
             <h2 className="font-Roboto font-bold md:text-4xl text-2xl">

@@ -11,11 +11,12 @@ function HeroSection() {
   return (
 <div>
 <div className="relative bottom-[11em] right-0 flex items-center justify-start w-full">
-  <video className='object-covern'
+  <video className='object-cover'
     ref={videoRef}
     width="1920"
     height="1080"
     loop
+    priority
     muted>
       <source src="/15-sec.mp4"/>
   </video>
