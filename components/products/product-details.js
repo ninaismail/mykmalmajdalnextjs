@@ -8,7 +8,7 @@ export default function ProductDetails(props) {
     const [mainimage, setMainImage] = useState(0);
 // style={{"margin-top": "-180px"}}
   return (
-  <div className="my-10 bg-white border border-black shadow-xl px-6 py-4 
+  <div className="my-10 bg-white border border-black shadow-xl px-6 py-4 lg:mt-[-180px] mt-0
   relative z-1 w-3/4 h-auto mx-auto rounded-lg">
       <div className="md:flex justify-center items-center">
         <div className="md:w-1/2">

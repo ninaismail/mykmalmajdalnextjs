@@ -86,7 +86,7 @@ function uniqueTypes(data){
 // style={{"margin-top": "-180px"}}
     return (
         <>
-<div className="shadow-xl md:w-1/6 sm:w-1/3 w-1/3 top-0 relative right-0 mx-6" >
+<div className="shadow-xl md:w-1/6 sm:w-1/3 w-1/3 top-0 relative right-0 mx-6 lg:mt-[-180px] mt-0">
 <select id="pricefilter" className="cursor-pointer bg-orange-500 text-white border border-orange-500
 rounded-lg block w-full px-6 py-3" defaultValue='default' value={sortPrice}
 onChange={(e) => {
