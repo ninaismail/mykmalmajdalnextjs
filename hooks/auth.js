@@ -1,5 +1,5 @@
 import useSWR from 'swr'
-import axios from '@/lib/axios'
+import axios from '../lib/axios'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
@@ -17,7 +17,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             }),
     )
 
-    const csrf = () => axios.get('/sanctum/csrf-cookie')
+    const csrf = () => axios.get("/sanctum/csrf-cookie")
 
     const register = async ({ setErrors, ...props }) => {
         await csrf()
