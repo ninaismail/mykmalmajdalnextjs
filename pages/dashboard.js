@@ -1,8 +1,19 @@
-// pages/profile.js
+import Dropdown from '../components/layout/Dropdown'
+import { DropdownButton } from '../components/layout/DropdownLink'
+
 import Head from 'next/head'
 import Link from "next/link";
 import Image from "next/image";
-const Dashboard = () => {
+
+import { useAuth } from '../hooks/auth'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+const Dashboard = ({ user }) => {
+    const router = useRouter()
+
+    const { logout } = useAuth()
+
+    const [open, setOpen] = useState(false)
     return (
 <>
 <Head>
@@ -11,21 +22,41 @@ const Dashboard = () => {
 
 <div>
     <header>
-    <nav>
-    <Link href={"/"} className="logo">
-      <Image src="/km-logo.png" width="121" height="61" alt="Food Options Logo" />
-    </Link>
+        <nav>
+            <Link href={"/"} className="logo">
+                <Image src="/km-logo.png" width="121" height="61" alt="Food Options Logo" />
+            </Link>
 
-    <button id="dropdownDefault" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center" 
-    type="button">name<svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-    <div id="dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
-        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
-            <li>
-                <Link href="#" class="block py-2 px-4 hover:bg-gray-100">الخروح</Link>
-            </li>
-        </ul>
-    </div>
-    </nav>
+            {/* Settings Dropdown */}
+            <div className="sm:ml-6">
+                <Dropdown
+                    align="right"
+                    width="48"
+                    trigger={
+                        <button className="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 focus:outline-none transition duration-150 ease-in-out">
+                            <div>{user?.name}</div>
+
+                            <div className="ml-1">
+                                <svg
+                                    className="fill-current h-4 w-4"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20">
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clipRule="evenodd"
+                                    />
+                                </svg>
+                            </div>
+                        </button>
+                    }>
+                    {/* Authentication */}
+                    <DropdownButton onClick={logout}>
+                        الخروج
+                    </DropdownButton>
+                </Dropdown>
+            </div>
+        </nav>
     </header>
     <div className="py-12">
 
