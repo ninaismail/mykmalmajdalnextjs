@@ -47,7 +47,7 @@ const Dropdown = ({
                         leaveTo="transform opacity-0 scale-95">
                         <div
                             className={`absolute z-50 mt-2 ${width} rounded-md shadow-lg ${alignmentClasses}`}>
-                            <Menu.Items dir="rtl"
+                            <Menu.Items
                                 className={`rounded-md focus:outline-none ring-1 ring-black ring-opacity-5 ${contentClasses}`}
                                 static>
                                 {children}

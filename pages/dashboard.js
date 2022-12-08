@@ -8,8 +8,9 @@ import Image from "next/image";
 import { useAuth } from '../hooks/auth'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-const Dashboard = ({ user }) => {
+const Dashboard = () => {
     const router = useRouter()
+    const { user } = useAuth({ middleware: 'auth' })
 
     const { logout } = useAuth()
 
@@ -30,7 +31,7 @@ const Dashboard = ({ user }) => {
             {/* Settings Dropdown */}
             <div className="sm:ml-6">
                 <Dropdown
-                    align="right"
+                    align="left"
                     width="48"
                     trigger={
                         <button className="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 focus:outline-none transition duration-150 ease-in-out">
