@@ -7,7 +7,7 @@ function ProductsCategoriesNav(props) {
   const allcategorieslink = `/categories`;  
 
   return (
-<div dir="rtl"className="md:relative md:right-0 lg:bottom-[18em] flex flex-wrap justify-center">
+<div dir="rtl"className="md:relative md:right-0 bottom-[8em] lg:bottom-[11em] flex flex-wrap justify-center">
 <div className="relative lg:flex-1 w-1/3 md:w-1/4 lg:w-1/7 w-full h-full">
     <Link href={allcategorieslink} className="flex items-center justify-center">
        <Image src='/categories/allcategories.jpg' width="258" height="255" 

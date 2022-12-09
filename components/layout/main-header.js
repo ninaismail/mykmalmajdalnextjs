@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import React, { useState, useEffect} from "react";
+import React, {useState} from "react";
 import {useRouter} from 'next/router'
 
 import {FaSearch} from 'react-icons/fa'
@@ -30,9 +30,9 @@ const Navbar = () => {
     function onChangeHandleInput(e) {
       const endPoint = e.target.value
         router.push({
-            pathname: "/searched",
-            state: { clickedFromHome: true },
-            query: endPoint
+            pathname: `/search`,
+            state: { clickedFromHome: true }, 
+            query: {endPoint}
           });
   } 
   return (
