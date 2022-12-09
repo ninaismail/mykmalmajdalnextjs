@@ -28,11 +28,11 @@ const Navbar = () => {
   const router = useRouter()
 
     function onChangeHandleInput(e) {
-      const endPoint = e.target.value
+      const title = e.target.value
         router.push({
-            pathname: `/search`,
-            state: { clickedFromHome: true }, 
-            query: {endPoint}
+            pathname: title ? `/search`: '/',
+            state: { clickedFromHome: true  }, 
+            query: title ? {title} : '',
           });
   } 
   return (
@@ -66,7 +66,7 @@ const Navbar = () => {
             <input type="search" id="default-search" className="block p-3 pr-10 w-full text-sm 
              bg-gray-500 text-black placeholder-black border rounded-full border-black-300 
              focus:ring-black-500 focus:border-black-500 opacity-75" 
-            placeholder="إبحث..."
+            placeholder="إبحث..." value={this}
             onChange={onChangeHandleInput} />
         </div>
     </form>
