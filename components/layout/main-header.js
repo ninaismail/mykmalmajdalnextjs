@@ -24,16 +24,16 @@ const Navbar = () => {
   const [lang, setLang] = useState("AR");
   const [lang1, setLang1] = useState("EN");
   const {totalItems} = useCart();
-
   const router = useRouter()
 
     function onChangeHandleInput(e) {
       const title = e.target.value
         router.push({
-            pathname: title ? `/search`: '/',
+            pathname: title ? `/search`: `/`,
             state: { clickedFromHome: true  }, 
             query: title ? {title} : '',
           });
+  sessionStorage.setItem(title, "this is value stored in sessionStorage")
   } 
   return (
 <header>
@@ -42,7 +42,7 @@ const Navbar = () => {
       <Image src="/km-logo.png" width="121" height="61" alt="Food Options Logo" />
     </Link>
    <div className={`font-Roboto ${navActive ? "active" : ""} nav__menu-list `}>
-   <Link href={'/login-or-register'}className="font-Roboto block p-3 hover:text-orange-500
+   <Link href={'/login'}className="font-Roboto block p-3 hover:text-orange-500
     bg-gray-500 text-white border rounded-full border-black-500 text-center
     focus:ring-black-500 focus:border-black-500 opacity-75">تسجيل الدخول للبيع بالجملة</Link>
         {MENU_LIST.map((menu, idx) => (
@@ -66,7 +66,7 @@ const Navbar = () => {
             <input type="search" id="default-search" className="block p-3 pr-10 w-full text-sm 
              bg-gray-500 text-black placeholder-black border rounded-full border-black-300 
              focus:ring-black-500 focus:border-black-500 opacity-75" 
-            placeholder="إبحث..." value={this}
+             placeholder="إبحث..." value={this}
             onChange={onChangeHandleInput} />
         </div>
     </form>

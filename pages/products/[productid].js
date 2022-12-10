@@ -2,11 +2,9 @@ import axios from '../../lib/axios';
 
 import Head from 'next/head';
 import ProductDetails from '../../components/products/product-details';
-import Header from '../../components/layout/main-header'
 import Footer from '../../components/layout/footer'
 import ProductsHeroSecion from '../../components/products/products-hero-section'
 import ProductsCategoriesNav from '../../components/products/products-categories-nav'
-import LangSwitch from '../../components/layout/langswitch'
 
 function ProductDetailPage(props) {
   const categories = props.allcategories;
@@ -30,8 +28,6 @@ function ProductDetailPage(props) {
           content={product.description}
         />
       </Head>
-      <LangSwitch />
-      <Header />
       <ProductsHeroSecion image="/productsbg.jpg"/>
 
       <ProductsCategoriesNav categories={categories}/>

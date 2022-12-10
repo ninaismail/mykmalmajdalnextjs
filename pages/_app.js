@@ -2,9 +2,17 @@ import '../styles/globals.css'
 import { CartProvider } from "react-use-cart";
 
 import '../styles/fonts.css'
-function MyApp({ Component, pageProps }) {
+import Navbar from '../components/layout/main-header';
+import LangSwitch from '../components/layout/langswitch';
+import  { AppProps } from 'next/app'
+
+function MyApp({ Component, pageProps,  ...appProps }) {
+
+    if ([`/dashboard`].includes(appProps.router.pathname))
+      return <Component {...pageProps} />;
     return (
-      <CartProvider><Component {...pageProps} /></CartProvider> 
+      <CartProvider><LangSwitch/><Navbar /><Component {...pageProps} /></CartProvider> 
   )
+
 }
 export default MyApp

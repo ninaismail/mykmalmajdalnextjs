@@ -3,11 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Head from 'next/head';
-import Header from '../components/layout/main-header'
 import Footer from '../components/layout/footer'
 import ProductsHeroSecion from '../components/products/products-hero-section'
 import ProductsCategoriesNav from '../components/products/products-categories-nav'
-import LangSwitch from '../components/layout/langswitch'
 import {SlClose} from 'react-icons/sl'
 
 import { useCart } from "react-use-cart";
@@ -107,8 +105,6 @@ function CartPage(props) {
           content=''
         />
       </Head>
-      <LangSwitch />
-      <Header />
       <ProductsHeroSecion image="/cartbg.jpg" title="سلّة المشتريات"/>
 
       <ProductsCategoriesNav categories={categories}/>

@@ -2,10 +2,8 @@ import { useCart } from "react-use-cart";
 import {useRouter} from 'next/router'
 
 import Head from 'next/head';
-import Header from '../../components/layout/main-header'
 import Footer from '../../components/layout/footer'
 import ProductsHeroSecion from '../../components/products/products-hero-section'
-import LangSwitch from '../../components/layout/langswitch'
 import {BsWhatsapp} from 'react-icons/bs'
 
 function myInvoicePage() {
@@ -25,8 +23,6 @@ function myInvoicePage() {
           content=''
         />
       </Head>
-      <LangSwitch />
-      <Header />
       <ProductsHeroSecion image="/cartbg.jpg" title="نسعد في خدمتك دائماً..."/>
 
 <div className="mx-auto shadow-xl w-4/5" style={{"margin-top": "-100px"}}>
