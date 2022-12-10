@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 function Branches() {
   return (
-<div className="relative top-0 left-0 flex items-center mt-4 justify-start text-white">
+<div id="contact"className="relative top-0 left-0 flex items-center mt-4 justify-start text-white">
     <Image src="/branchesbg.jpg" width="1916"height="740" className='min-h-[282px]'
     alt="Km Almajdal"objectFit='contain'/>
   <div class="absolute px-10 lg:px-24 z-10 text-right">

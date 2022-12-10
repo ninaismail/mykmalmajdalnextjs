@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 function CategoriesGrid() {
   return (
-<div dir="rtl"className="flex flex-wrap justify-center mt-6">
+<div id="about"dir="rtl"className="flex flex-wrap justify-center mt-6">
   <div className="lg:flex-1 w-full h-full lg:w-1/3 mx-6 my-4">
    <Image src="/2-1.jpg" width="597" height="880" alt="جميع المنتجات" className="bg-gray-700 mx-auto w-full"/>
   <div className='relative bottom-0 top-[-9.7em] right-0 left-0 mx-auto'>

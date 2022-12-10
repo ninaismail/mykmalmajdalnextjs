@@ -52,39 +52,6 @@ nav{
   align-items: center;
   background-color: transparent;
 }
-.nav__menu-bar{
-  display: flex;
-  flex-direction: column;
-  row-gap: 6px;
-  cursor: pointer;
-}
-
-.nav__menu-bar div{
-  width: 40px;
-  height: 4px;
-  background-color: #fff;
-  border-radius: 2px;
-}
-
-.x:nth-of-type(1) {
-  transition: all 100ms ease-in-out;
-  transform: rotate(45deg);
-  transform-origin: top left;
-  width: 28px;
-}
-
-.x:nth-of-type(2) {
-  transition: all 100ms ease-in-out;
-  transform-origin: center;
-  width: 0;
-}
-
-.x:nth-of-type(3) {
-  transition: all 100ms ease-in-out;
-  transform: rotate(-45deg);
-  transform-origin: bottom left;
-  width: 28px;
-}
 .nav__menu-list{
   display: flex;
   flex-direction: column;
@@ -127,6 +94,38 @@ nav{
   justify-content: center;
   align-items: center;
 }
+.nav__menu-bar {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.icon-bar {
+  display: block;
+  width: 25px;
+  height: 4px;
+  margin: 3px;
+  background-color: white;
+}
+.nav__menu-bar[aria-expanded="true"] .icon-bar:is(:first-child, :last-child) {
+  position: absolute;
+  margin: 0;
+  width: 30px;
+}
+.nav__menu-bar[aria-expanded="true"] .icon-bar:first-child {
+  transform: rotate(45deg);
+}
+.nav__menu-bar[aria-expanded="true"] .icon-bar:nth-child(2) {
+  opacity: 0;
+}
+.nav__menu-bar[aria-expanded="true"] .icon-bar:last-child {
+  transform: rotate(-45deg);
+}
 @media screen and (min-width: 860px) {
   .nav__menu-bar{
     display: none;
@@ -149,9 +148,8 @@ nav{
     background-color: orange;
     transition: all 0.2s;
   }
-  .nav__link:hover{
+  .nav__link:hover, .active{
     color: orange;    
     border-bottom: 3px solid orange;
    }
-
 }

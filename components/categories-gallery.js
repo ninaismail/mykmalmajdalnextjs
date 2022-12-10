@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 function CategoriesGallery() {
   return (
-<div dir="rtl"className="flex flex-wrap justify-center mt-6">
+<div id="products" dir="rtl"className="flex flex-wrap justify-center mt-6">
     <div className="lg:flex-1 w-full h-full md:w-1/2 lg:w-1/3 mx-6">
       <Image src="/nutella-maison.jpg" width="473" height="330" alt="Butella Maison" className="bg-gray-700 mb-6 mx-auto w-full"/>
       <Image src="/chocalatechip-cookies.jpg" width="473" height="703" alt="" className="bg-gray-700 mx-auto w-full"/>

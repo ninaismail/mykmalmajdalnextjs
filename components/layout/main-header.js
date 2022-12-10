@@ -10,11 +10,11 @@ import { useCart } from "react-use-cart";
 import NavItem from "./header-item";
 const MENU_LIST = [
   { text: "الصفحة الرئيسية", href: "/" }, 
-  { text: "من نحن", href: "#about" },
-  { text: "الأهداف", href: "#about" },
-  { text: "إبداعات منتجاتنا", href: "#product" },
-  { text: "تواصل معنا", href: "#contact" },
-  { text: "حسابي", href: "/my-account" },
+  { text: "من نحن", href: "http://localhost:3000/#about" },
+  { text: "الأهداف", href: "http://localhost:3000/#goals" },
+  { text: "إبداعات منتجاتنا", href: "http://localhost:3000/#products" },
+  { text: "تواصل معنا", href: "http://localhost:3000/#contact" },
+  { text: "حسابي", href: "http://localhost:3000/dashboard" },
 
 ];
 const Navbar = () => {
@@ -25,6 +25,8 @@ const Navbar = () => {
   const [lang1, setLang1] = useState("EN");
   const {totalItems} = useCart();
   const router = useRouter()
+  
+  const [selectAria, setSelectAria] = useState(false);
 
     function onChangeHandleInput(e) {
       const title = e.target.value
@@ -35,6 +37,10 @@ const Navbar = () => {
           });
   sessionStorage.setItem(title, "this is value stored in sessionStorage")
   } 
+  const handleClick= () => {
+    setNavActive(!navActive);
+    setSelectAria(!selectAria)
+  };
   return (
 <header>
   <nav>
@@ -76,13 +82,14 @@ const Navbar = () => {
       {totalItems}
       </div>
     </Link>
-    <div className="nav__menu-bar"
-      onClick={() => setNavActive(!navActive)}
-    >
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>  
+    <button type="button" aria-label="Toggle menu" aria-expanded={selectAria}
+      className="nav__menu-bar"
+      onClick={handleClick}>
+
+      <span className="icon-bar"></span>
+      <span className="icon-bar"></span>
+      <span className="icon-bar"></span>
+    </button>  
   </nav>
 </header>
   );
