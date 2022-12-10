@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {FaInstagram,FaYoutube,FaFacebook,FaWhatsapp,FaTwitter} from 'react-icons/fa'
 function Footer() {
     return ( 
@@ -9,19 +10,19 @@ function Footer() {
             </h2>
             <ul className='font-Roboto'>
                 <li className="mb-4 md:text-xl text-l">
-                    <a href="#" className="hover:underline">الصفحة الرئيسية</a>
+                    <Link href="#" className="hover:text-orange-500">الصفحة الرئيسية</Link>
                 </li>
                 <li className="mb-4 md:text-xl text-l">
-                    <a href="#" className="hover:underline">من نحن</a>
+                    <Link href="#" className="hover:text-orange-500">من نحن</Link>
                 </li>
                 <li className="mb-4 md:text-xl text-l">
-                    <a href="#" className="hover:underline">الأصناف</a>
+                    <Link href="#" className="hover:text-orange-500">الأصناف</Link>
                 </li>
                 <li className="mb-4 md:text-xl text-l">
-                    <a href="#" className="hover:underline">إبداعات منتجاتنا</a>
+                    <Link href="#" className="hover:text-orange-500">إبداعات منتجاتنا</Link>
                 </li>
                 <li className="mb-4 md:text-xl text-l">
-                    <a href="#" className="hover:underline">تواصل معنا</a>
+                    <Link href="#" className="hover:text-orange-500">تواصل معنا</Link>
                 </li>
             </ul>
         </div>
@@ -31,33 +32,33 @@ function Footer() {
             </h2>
             <ul className='font-Roboto'>
                 <li className="mb-4 md:text-xl text-l">
-                    <a href="#" className="hover:underline">يسعدنا تلقي استفساراتكم و اقتراحاتكم
-                    على الرقم : 0593337383</a>
+                    <Link href="#" className="hover:text-orange-500">يسعدنا تلقي استفساراتكم و اقتراحاتكم
+                    على الرقم : 0593337383</Link>
                 </li>
                 <li className="mb-4 md:text-xl text-l">
-                    <a href="#" className="hover:underline">info@km-almajdal.com</a>
+                    <Link href="#" className="hover:text-orange-500">info@km-almajdal.com</Link>
                 </li>
                 <li className="mb-4 flex">
-                <a href="#"className='border rounded-full p-3'>
-                    <FaTwitter fontSize="1.4em" />
+                <Link href="#"className='border rounded-full p-3 hover:bg-orange-300'>
+                    <FaTwitter fontSize="1.4em" className=""/>
                     <span className="sr-only">Twitter page</span>
-                </a>                
-                <a href="#"className='border rounded-full p-3'>
-                    <FaYoutube fontSize="1.4em" />
+                </Link>                
+                <Link href="#"className='border rounded-full p-3 hover:bg-orange-300'>
+                    <FaYoutube fontSize="1.4em"/>
                     <span className="sr-only">Youtube page</span>
-                </a>
-                <a href="#"className='border rounded-full p-3'>
-                    <FaFacebook fontSize="1.4em" />
+                </Link>
+                <Link href="#"className='border rounded-full p-3 hover:bg-orange-300'>
+                    <FaFacebook fontSize="1.4em"/>
                     <span className="sr-only">Facebook page</span>
-                </a>     
-                <a href="#"className='border rounded-full p-3'>
-                    <FaInstagram fontSize="1.4em" />
+                </Link>     
+                <Link href="#"className='border rounded-full p-3 hover:bg-orange-300'>
+                    <FaInstagram fontSize="1.4em"/>
                     <span className="sr-only">Instagram page</span>
-                </a>
-                <a href="#"className='border rounded-full p-3'>
-                    <FaWhatsapp fontSize="1.4em" />
+                </Link>
+                <Link href="#"className='border rounded-full p-3 hover:bg-orange-300'>
+                    <FaWhatsapp fontSize="1.4em"/>
                     <span className="sr-only">Whatsapp page</span>
-                </a>             
+                </Link>             
                </li>
             </ul>
         </div>   
@@ -75,7 +76,7 @@ function Footer() {
             © Copyrights 2022. <span className='font-bold'>Komet Al Majdal</span> All Rights Reserved. 
         </div>
         <div className="md:mx-10">
-            Powered By<a href="https://flowbite.com/">DAS360</a>
+            Powered By<Link href="https://flowbite.com/">DAS360</Link>
         </div>
     </div>
 </footer>
