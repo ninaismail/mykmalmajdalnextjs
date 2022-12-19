@@ -77,6 +77,7 @@ function Login() {
                 </div>
                     <button className="px-6 py-2 mt-4 text-white bg-orange-500 rounded-lg hover:bg-orange-700">تسجيل الدخول</button>
                     &nbsp;<Link href="/forgot-password" className="text-sm text-orange-500 hover:underline">نسيت كلمة مرورك؟</Link>
+                   <p className='font-Roboto mt-4 md:text-xl text-l'>لا تملك حساب؟</p><Link href="/register" className="text-sm text-orange-500 hover:underline">إنشاء حساب جديد</Link>
             </div>
         </form>
     </div>
