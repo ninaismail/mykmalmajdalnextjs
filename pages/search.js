@@ -7,7 +7,6 @@ import Image from 'next/image'
 import Link from "next/link"
 import Head from 'next/head'
 
-import Footer from '../components/layout/footer'
 import ProductsHeroSecion from '../components/products/products-hero-section'
 
 import Branches from '../components/branches'
@@ -82,7 +81,6 @@ export default function SearchedProducts(props) {
       </div>   
       </div>}   
       <Branches/>
-      <Footer />
       </div>
     )
   }

@@ -2,7 +2,6 @@ import { useAuth } from '../hooks/auth'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import Footer from '../components/layout/footer'
 import ProductsHeroSecion from '../components/products/products-hero-section'
 
 import InputError from '../components/authentication/InputError'
@@ -80,9 +79,7 @@ function Login() {
                 </div>
             </form>
         </div>
-        <Footer />
         </div>
-
   );
 }
 

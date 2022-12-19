@@ -2,7 +2,6 @@ import axios from '../../lib/axios';
 
 import Head from 'next/head';
 import ProductDetails from '../../components/products/product-details';
-import Footer from '../../components/layout/footer'
 import ProductsHeroSecion from '../../components/products/products-hero-section'
 import ProductsCategoriesNav from '../../components/products/products-categories-nav'
 
@@ -44,7 +43,6 @@ function ProductDetailPage(props) {
          image4={product.image4} 
          category_id={product.category_id}
        />
-      <Footer />
     </div>
   );
 }

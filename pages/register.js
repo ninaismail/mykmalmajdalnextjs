@@ -1,7 +1,6 @@
 import { useAuth } from '../hooks/auth'
 import { useState } from 'react'
 import Head from 'next/head'
-import Footer from '../components/layout/footer'
 import ProductsHeroSecion from '../components/products/products-hero-section'
 
 import InputError from '../components/authentication/InputError'
@@ -96,7 +95,6 @@ function Register() {
                 </div>
             </form>
         </div>
-        <Footer />
         </div>
     );
   }

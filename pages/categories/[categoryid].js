@@ -1,7 +1,6 @@
 import axios from '../../lib/axios';
 
 import Head from 'next/head'
-import Footer from '../../components/layout/footer'
 import ProductsHeroSecion from '../../components/products/products-hero-section'
 
 import ProductsBtCategory from '../../components/products/products-by-category';
@@ -24,7 +23,6 @@ export default function ProductsPage(props) {
          
       <ProductsBtCategory categoryId={category.id} />
       <Branches/>
-      <Footer />
       </div>
     )
   }

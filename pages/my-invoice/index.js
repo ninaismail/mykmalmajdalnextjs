@@ -2,7 +2,6 @@ import { useCart } from "react-use-cart";
 import {useRouter} from 'next/router'
 
 import Head from 'next/head';
-import Footer from '../../components/layout/footer'
 import ProductsHeroSecion from '../../components/products/products-hero-section'
 import {BsWhatsapp} from 'react-icons/bs'
 
@@ -82,7 +81,6 @@ function myInvoicePage() {
         </div>
     </div>
 </div>
-       <Footer />
     </>
     )
 }

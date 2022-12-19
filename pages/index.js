@@ -1,7 +1,6 @@
 import axios from '../lib/axios';
 
 import Head from 'next/head'
-import Footer from '../components/layout/footer'
 import HeroSection from '../components/hero-section'
 import CategoriesSection from '../components/categories-section'
 import Branches from '../components/branches'
@@ -18,7 +17,6 @@ export default function Home(props) {
       <HeroSection />
       <CategoriesSection categories={categories}/>
       <Branches/>
-      <Footer />
     </div>
   )
 }
