@@ -1,9 +1,7 @@
 import axios from '../../lib/axios';
 
 import Head from 'next/head'
-import Footer from '../../components/layout/footer'
 import ProductsHeroSecion from '../../components/products/products-hero-section'
-
 import Products from '../../components/products/products';
 import Branches from '../../components/branches'
 import ProductsCategoriesNav from '../../components/products/products-categories-nav'
@@ -27,7 +25,6 @@ export default function ProductsPage(props) {
       <Products products={products} />
    
       <Branches/>
-      <Footer />
       </div>
     )
   }

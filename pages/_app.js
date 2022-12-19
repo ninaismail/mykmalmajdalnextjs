@@ -11,6 +11,8 @@ function MyApp({ Component, pageProps,  ...appProps }) {
 
     if ([`/dashboard`].includes(appProps.router.pathname))
       return <Component {...pageProps} />;
+    if ([`/_error`].includes(appProps.router.pathname))
+      return <Component {...pageProps} />;
     return (
       <CartProvider><LangSwitch/><Navbar /><Component {...pageProps} /><Footer /></CartProvider> 
   )
