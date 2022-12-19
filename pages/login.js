@@ -52,7 +52,7 @@ function Login() {
         <form className="mt-4 p-4 border border-gray-200" onSubmit={submitForm}>
             <div>
                 <div>
-                    <label className="font-Roboto block" for="email">اسم المستخدم أو البريد الإلكتروني *</label>
+                    <label className="font-Roboto block" for="email">البريد الإلكتروني *</label>
                     <input type="text"value={email} id="email"
                         className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none 
                         focus:ring-1 focus:ring-orange-700"
@@ -77,7 +77,7 @@ function Login() {
                 </div>
                     <button className="px-6 py-2 mt-4 text-white bg-orange-500 rounded-lg hover:bg-orange-700">تسجيل الدخول</button>
                     &nbsp;<Link href="/forgot-password" className="text-sm text-orange-500 hover:underline">نسيت كلمة مرورك؟</Link>
-                   <p className='font-Roboto mt-4 md:text-xl text-l'>لا تملك حساب؟</p><Link href="/register" className="text-sm text-orange-500 hover:underline">إنشاء حساب جديد</Link>
+                   <p className='font-Roboto mt-4 md:text-xl text-l'>لا تملك حساب؟&nbsp;<Link href="/register" className="text-sm text-orange-500 hover:underline">إنشاء حساب جديد</Link></p>
             </div>
         </form>
     </div>
