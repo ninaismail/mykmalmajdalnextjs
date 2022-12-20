@@ -1,6 +1,9 @@
 import Link from "next/link";
+
 import {FaInstagram,FaYoutube,FaFacebook,FaWhatsapp,FaTwitter} from 'react-icons/fa'
 function Footer() {
+    const mailtoHref = "mailto:najatt.ismail@gmail.com?subject=SendMail&body=Description";
+    const teltoHref = "tel:71043224"
     return ( 
 <footer>
     <div className="flex flex-wrap md:flex-nowrap gap-8 py-8 px-6">
@@ -32,11 +35,11 @@ function Footer() {
             </h2>
             <ul className='font-Roboto'>
                 <li className="mb-4 md:text-xl text-l">
-                    <Link href="#" className="hover:text-orange-500">يسعدنا تلقي استفساراتكم و اقتراحاتكم
-                    على الرقم : 0593337383</Link>
+                   يسعدنا تلقي استفساراتكم و اقتراحاتكم
+                    على الرقم : <Link href={teltoHref} className="hover:text-orange-500">00000000</Link>
                 </li>
                 <li className="mb-4 md:text-xl text-l">
-                    <Link href="#" className="hover:text-orange-500">info@km-almajdal.com</Link>
+                    <Link href={mailtoHref} className="hover:text-orange-500">info@km-almajdal.com</Link>
                 </li>
                 <li className="mb-4 flex">
                 <Link href="#"className='border rounded-full p-3 hover:bg-orange-300'>
