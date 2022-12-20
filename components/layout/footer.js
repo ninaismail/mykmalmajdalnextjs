@@ -4,6 +4,8 @@ import {FaInstagram,FaYoutube,FaFacebook,FaWhatsapp,FaTwitter} from 'react-icons
 function Footer() {
     const mailtoHref = "mailto:najatt.ismail@gmail.com?subject=SendMail&body=Description";
     const teltoHref = "tel:71043224"
+    const wapptoHref = "https://api.whatsapp.com/send?phone=96171043224"
+
     return ( 
 <footer>
     <div className="flex flex-wrap md:flex-nowrap gap-8 py-8 px-6">
@@ -58,7 +60,7 @@ function Footer() {
                     <FaInstagram fontSize="1.4em"/>
                     <span className="sr-only">Instagram page</span>
                 </Link>
-                <Link href="#"className='border rounded-full p-3 hover:bg-orange-300'>
+                <Link href={wapptoHref}className='border rounded-full p-3 hover:bg-orange-300'>
                     <FaWhatsapp fontSize="1.4em"/>
                     <span className="sr-only">Whatsapp page</span>
                 </Link>             
