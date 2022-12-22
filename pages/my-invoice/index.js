@@ -4,14 +4,14 @@ import {useRouter} from 'next/router'
 import Head from 'next/head';
 import ProductsHeroSecion from '../../components/products/products-hero-section'
 import {BsWhatsapp} from 'react-icons/bs'
+
+function myInvoicePage() {
     const router = useRouter();
-    const invoice = router.query
-    console.log(invoice);
     const {
         cartTotal,
         items,
       } = useCart();
-function myInvoicePage() {
+    const invoice = router.query
     return (
       <>
     <Head>
