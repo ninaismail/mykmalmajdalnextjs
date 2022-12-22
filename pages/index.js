@@ -1,10 +1,17 @@
+import dynamic from 'next/dynamic';
 import axios from '../lib/axios';
 
 import Head from 'next/head'
-import HeroSection from '../components/hero-section'
-import CategoriesSection from '../components/categories-section'
+// import HeroSection from '../components/hero-section'
+// import CategoriesSection from '../components/categories-section'
 import Branches from '../components/branches'
 
+const HeroSection = dynamic(() => import('../components/hero-section'), {
+  loading: () => 'Loading...',
+})
+const CategoriesSection = dynamic(() => import('../components/categories-section'), {
+  loading: () => 'Loading...',
+})
 export default function Home(props) {
   const { categories } = props;
   return (

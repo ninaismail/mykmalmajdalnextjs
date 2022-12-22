@@ -31,7 +31,7 @@ function CartPage(props) {
           <h1 className="text-lg font-bold pb-4">منتجاتك</h1>
           <ul className="divide-y divide-gray-200">
             {items.map((item) => (
-            <li className="w-full flex flex-wrap md:flex-nowrap items-center justify-between">
+            <li key={item.id}className="w-full flex flex-wrap md:flex-nowrap items-center justify-between">
               <div className="md:w-1/3 w-1/2 flex items-start justify-start">
                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border 
                 border-gray-200">

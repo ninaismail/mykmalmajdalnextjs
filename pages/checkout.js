@@ -152,7 +152,7 @@ function CheckoutPage() {
                 <h2 class="font-Roboto text-xl font-bold">المجموع</h2>
             </div>                        
             {items.map((item) => (      
-            <div class="flex justify-between items-center py-4 font-semibold border-b border-gray-300">
+            <div key={item.id}class="flex justify-between items-center py-4 font-semibold border-b border-gray-300">
                 <div class="flex justify-between items-center"><h2>{item.title}</h2>&nbsp;&nbsp;<p>{item.quantity}x</p></div> 
                 <div><p>{item.price}</p></div>
             </div> 
