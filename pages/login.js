@@ -26,8 +26,7 @@ function Login() {
         } else {
             setStatus(null)
         }
-    })
-
+    }, [])
     const submitForm = async event => {
         event.preventDefault()
 

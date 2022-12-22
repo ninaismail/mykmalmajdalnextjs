@@ -1,5 +1,5 @@
-import { useCart } from "react-use-cart";
 import {useRouter} from 'next/router'
+import { useCart } from "react-use-cart";
 
 import Head from 'next/head';
 import ProductsHeroSecion from '../../components/products/products-hero-section'
