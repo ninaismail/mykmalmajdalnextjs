@@ -1,7 +1,7 @@
 import { useAuth } from '../hooks/auth'
 import { useState } from 'react'
 
-const VerifyEmail = () => {
+function VerifyEmail() {
     const { logout, resendEmailVerification } = useAuth({
         middleware: 'auth',
         redirectIfAuthenticated: '/dashboard',
