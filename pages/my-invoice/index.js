@@ -5,7 +5,7 @@ import Head from 'next/head';
 import ProductsHeroSecion from '../../components/products/products-hero-section'
 import {BsWhatsapp} from 'react-icons/bs'
 
-function myInvoicePage() {
+function MyInvoicePage() {
     const router = useRouter();
     const {
         cartTotal,
@@ -83,4 +83,4 @@ function myInvoicePage() {
     </>
     )
 }
-export default myInvoicePage;
+export default MyInvoicePage;
