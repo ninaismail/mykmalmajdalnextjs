@@ -7,10 +7,10 @@ import Head from 'next/head'
 import Branches from '../components/branches'
 
 const HeroSection = dynamic(() => import('../components/hero-section'), {
-  loading: () => 'Loading...',
+  loading: () => '',
 })
 const CategoriesSection = dynamic(() => import('../components/categories-section'), {
-  loading: () => 'Loading...',
+  loading: () => '',
 })
 export default function Home(props) {
   const { categories } = props;
