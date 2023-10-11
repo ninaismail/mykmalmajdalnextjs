@@ -12,7 +12,7 @@ function CategoriesNav(props) {
     <Link href={allcategorieslink}>
        <Image src='/categories/allcategories.jpg' priority width="258" height="255" 
        layout="responsive" objectFit="cover"
-        alt='جميع المنتجات' className="rounded-full mx-auto mb-15"/>
+        alt='جميع المنتجات' className="rounded-full mx-auto mb-15 max-w-[258px] max-h-[255px]"/>
        <h2 className="font-Roboto font-bold md:text-4xl text-2xl">
        جميع المنتجات</h2>
     </Link>

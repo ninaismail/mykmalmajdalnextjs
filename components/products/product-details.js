@@ -22,24 +22,14 @@ export default function ProductDetails(props) {
         </div>
         <div className="md:w-1/2 md:flex md:justify-center md:items-center">
           <div className="md:w-2/3 w-full">
-          {mainimage == 0 && <Image width="885" height="891"
-            src={image}
-            alt={title}
-            />} 
-            {mainimage == 1 && <Image width="885" height="891"
-            src={image2}
-            alt={title}
-            />} 
-            {mainimage == 2 && <Image width="885" height="891"
-            src={image3}
-            alt={title}
-            />} 
-            {mainimage == 3 && <Image width="885" height="891"
-            src={image4}
-            alt={title}
-            />}                 
+          <Image 
+          width="885" 
+          height="891"
+          src={image}
+          alt={title}
+          />
           </div>
-          <div className="md:w-1/3 w-full flex flex-row md:block">
+          {/* <div className="md:w-1/3 w-full flex flex-row md:block">
           <Image width="885" height="891"
             src={image2}
             alt={title}
@@ -55,7 +45,7 @@ export default function ProductDetails(props) {
             alt={title}
             className="opacity-75 hover:opacity-100 w-1/3 md:w-full cursor-pointer"
             onClick={() => setMainImage(3)}/>               
-          </div>
+          </div> */}
         </div>
      </div>    
      <div className="md:w-1/2 md:flex justify-center items-center">
@@ -67,7 +57,7 @@ export default function ProductDetails(props) {
                 border border-solid border-gray-300 rounded
                 transition ease-in-out m-0 focus:bg-white focus:outline-none"
                 id="quantityinput"
-                placeholder="الكمية"
+                placeholder="0"
             />
             </div>            
             <div className="md:w-2/3 w-full md:mr-2">
